@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+//This comment was made by Daniel Kufer so he could commit something.
 public class MainActivity extends AppCompatActivity {
 
     @Override
