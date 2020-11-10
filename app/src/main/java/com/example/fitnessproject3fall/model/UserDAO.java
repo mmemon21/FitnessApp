@@ -1,4 +1,4 @@
-package com.example.fitnessproject3fall.DB;
+package com.example.fitnessproject3fall.model;
 
 import com.example.fitnessproject3fall.model.User;
 
@@ -20,12 +20,12 @@ public interface UserDAO {
     @Delete
     void deleteUser(User user);
 
-    @Query("SELECT * FROM users")
+    @Query("SELECT * FROM User")
     List<User> getAllUsers();
 
-    @Query("SELECT * FROM users where username LIKE :search")
+    @Query("SELECT * FROM User where username LIKE :search")
     User getUserWithUsername(String search);
 
-    @Query("Select * From users where user_id = :userId")
+    @Query("Select * From User where user_id = :userId")
     User getUserId (Integer userId);
 }
