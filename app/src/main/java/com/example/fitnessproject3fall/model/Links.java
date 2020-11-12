@@ -24,6 +24,5 @@ public class Links {
     public void setVideo_url(String link_url){this.link_url = link_url;}
     public int getGroup_id(){return group_id;}
     public int getCount() { return count;}
-    public String getVideo_url(){return link_url;}
-
+    public String getLink_url(){return link_url;}
 }
