@@ -14,8 +14,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="/AppTheme.PopupOverlay"/>
+            android:background="?attr/colorPrimary"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -27,7 +26,7 @@
         android:text="Assignments:" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_assignments"
+        android:id="@+id/recycler_view_coaches"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_weight="1"
@@ -37,7 +36,6 @@
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="rounded_corners"
         android:text="Back"
         android:textColor="#DBFCFF" />
 

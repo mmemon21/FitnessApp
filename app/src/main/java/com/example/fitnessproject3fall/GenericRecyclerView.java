@@ -17,12 +17,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.fitnessproject3fall.model.Coach;
+import com.example.fitnessproject3fall.model.FitnessDAO;
+import com.example.fitnessproject3fall.model.FitnessDB;
 import com.example.fitnessproject3fall.model.User;
 import com.example.fitnessproject3fall.model.UserDAO;
 
 public class GenericRecyclerView extends AppCompatActivity {
-    static List<User> assignments;
+    static List<User> coaches;
     List<User> enrollments;
+    FitnessDAO aDB = FitnessDB.getFitnessDB(this).dao();
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
@@ -42,15 +45,15 @@ public class GenericRecyclerView extends AppCompatActivity {
             }
         });
 
-        /** A list to get all assignments, then if the assignment is not null a Recycler view is implemented to show assignments */
-        if(assignments == null) {
-            assignments = UserDAO.getAllUsers();
+        /** A list to get all coaches, then if the assignment is not null a Recycler view is implemented to show coaches */
+        if(coaches == null) {
+            coaches = aDB.getAllUser();
         }
 
-        if(assignments != null)
-            Log.d("ViewAssignmentsActivity", "Assignments's" + assignments.size());
+        if(coaches != null)
+            Log.d("ViewcoachesActivity", "coaches's" + coaches.size());
 
-        RecyclerView rv2 = findViewById(R.id.recycler_view_assignments);
+        RecyclerView rv2 = findViewById(R.id.recycler_view_coaches);
         rv2.setLayoutManager(new LinearLayoutManager(this));
         rv2.setAdapter(new Adapter());
     }
@@ -69,17 +72,17 @@ public class GenericRecyclerView extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(GenericRecyclerView.ItemHolder holder, int position){
-            holder.bind(assignments.get(position));
+            holder.bind(coaches.get(position));
 
 
         }
 
         @Override
         public int getItemCount() {
-            if(assignments == null){
+            if(coaches == null){
                 return 0;
             }
-            return assignments.size();
+            return coaches.size();
         }
     }
 

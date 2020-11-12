@@ -11,6 +11,9 @@ public interface FitnessDAO {
     @Query("select * from User")
     List<User> getAllUser();
 
+    @Query("select * from Coach")
+    List<Coach> getAllCoach();
+
     @Query("select * from DirectMsg")
     List<DirectMsg> getAllMessages();
 
