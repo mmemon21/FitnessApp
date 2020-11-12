@@ -24,7 +24,6 @@ public class Videos {
     public void setVideo_url(String video_url){this.video_url = video_url;}
     public int getGroup_id(){return group_id;}
     public int getCount() { return count;}
-
     public String getVideo_url(){return video_url;}
 
 }

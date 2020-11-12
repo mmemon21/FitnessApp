@@ -1,5 +1,6 @@
 package com.example.fitnessproject3fall;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.fitnessproject3fall.model.FitnessDAO;
@@ -15,6 +16,7 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -37,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
         TextView msg = findViewById(R.id.hello);
         msg.setText(users.get(0).getFirst_name() + "this is new project");
 
+        Button button = findViewById(R.id.viewgoal);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewGoalsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
