@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grad"
-    tools:context=".model.ViewProfileActivity">
+    tools:context=".ViewProfileActivity">
 
     <RelativeLayout
         android:id="@+id/rellay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/grad"
         android:paddingBottom="20dp">
 
         <RelativeLayout
@@ -59,7 +58,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:background="@drawable/grad"
             android:gravity="center"
             android:paddingBottom="5dp"
             android:paddingTop="5dp">
