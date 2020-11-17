@@ -24,4 +24,11 @@
         android:id="@+id/viewgoal"
         />
 
+    <Button
+        android:id="@+id/recyclerviewbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Recycler View" />
+
 </LinearLayout>
