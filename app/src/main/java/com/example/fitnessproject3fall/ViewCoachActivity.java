@@ -13,25 +13,22 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.example.fitnessproject3fall.model.Coach;
 import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
-import com.example.fitnessproject3fall.model.User;
-import com.example.fitnessproject3fall.model.UserDAO;
 
-public class GenericRecyclerView extends AppCompatActivity {
-    static List<User> coaches;
-    List<User> enrollments;
+public class ViewCoachActivity extends AppCompatActivity {
+    static List<Coach> coaches;
+    List<Coach> enrollments;
     FitnessDAO aDB = FitnessDB.getFitnessDB(this).dao();
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         Log.d("LoginActivity", "onCreate called");
         super.onCreate(saveInstanceState);
-        setContentView(R.layout.generic_recycler_view);
+        setContentView(R.layout.activity_view_coach);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,7 +44,7 @@ public class GenericRecyclerView extends AppCompatActivity {
 
         /** A list to get all coaches, then if the assignment is not null a Recycler view is implemented to show coaches */
         if(coaches == null) {
-            coaches = aDB.getAllUser();
+            coaches = aDB.getAllCoach();
         }
 
         if(coaches != null)
@@ -65,13 +62,13 @@ public class GenericRecyclerView extends AppCompatActivity {
     private class Adapter extends RecyclerView.Adapter<ItemHolder> {
 
         @Override
-        public GenericRecyclerView.ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            LayoutInflater layoutInflater = LayoutInflater.from(GenericRecyclerView.this);
-            return new GenericRecyclerView.ItemHolder(layoutInflater, parent);
+        public ViewCoachActivity.ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(ViewCoachActivity.this);
+            return new ViewCoachActivity.ItemHolder(layoutInflater, parent);
         }
 
         @Override
-        public void onBindViewHolder(GenericRecyclerView.ItemHolder holder, int position){
+        public void onBindViewHolder(ViewCoachActivity.ItemHolder holder, int position){
             holder.bind(coaches.get(position));
 
 
@@ -92,7 +89,7 @@ public class GenericRecyclerView extends AppCompatActivity {
             super(inflater.inflate(R.layout.item, parent, false));
         }
 
-        public void bind(User f ) {
+        public void bind(Coach f ) {
             TextView item = itemView.findViewById(R.id.item_id);
             item.setText(f.toString());
         }
