@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
         List<User> users;
         users = dao.getAllUser();
+//
+//        TextView msg = findViewById(R.id.hello);
+//        msg.setText(users.get(0).getFirst_name() + "this is new project");
 
-        TextView msg = findViewById(R.id.hello);
-        msg.setText(users.get(0).getFirst_name() + "this is new project");
-
-        Button button = findViewById(R.id.viewgoal);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button calendarButton = findViewById(R.id.calendarButton);
+        calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ViewGoalsActivity.class);
