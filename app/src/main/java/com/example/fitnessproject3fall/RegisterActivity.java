@@ -1,7 +1,5 @@
 package com.example.fitnessproject3fall;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,7 +18,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText firstName;
     private  EditText lastName;
     private EditText age;
-    private EditText groupId;
     private EditText bio;
 
     private FitnessDB db;
@@ -36,15 +33,9 @@ public class RegisterActivity extends AppCompatActivity {
         firstName = findViewById(R.id.et_FirstName);
         lastName = findViewById(R.id.et_LastName);
         age = findViewById(R.id.et_Age);
-        groupId = findViewById(R.id.et_GroupId);
         bio = findViewById(R.id.et_Bio);
 
         db = FitnessDB.getFitnessDB(getApplicationContext());
-    }
-
-    public static Intent getIntent(Context context){
-        Intent intent = new Intent(context, RegisterActivity.class);
-        return intent;
     }
 
     public void register(View view){
@@ -58,7 +49,6 @@ public class RegisterActivity extends AppCompatActivity {
         String first_name = firstName.getText().toString();
         String last_name = lastName.getText().toString();
         int Age = Integer.parseInt(age.getText().toString());
-        int group_id =Integer.parseInt(groupId.getText().toString());
         String Bio = bio.getText().toString();
         List<User> userList = db.dao().getAllUser();
         int user_size = userList.size();
@@ -69,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(usernameCorrect && passwordCorrect && !first_name.isEmpty()&& !last_name.isEmpty() && !user_name.isEmpty() && !pass_word.isEmpty()){
 
-            db.dao().addUser(new User(user_id,first_name,last_name,Age," ",Bio,user_name,pass_word,group_id));
+            db.dao().addUser(new User(user_id,first_name,last_name,Age," ",Bio,user_name,pass_word,0));
 
         }
 
