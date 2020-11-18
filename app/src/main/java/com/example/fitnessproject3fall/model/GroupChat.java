@@ -1,25 +1,32 @@
 package com.example.fitnessproject3fall.model;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import androidx.annotation.NonNull;
+import androidx.room.Dao;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class DirectMsg {
+public class GroupChat {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int message_count;
     private int user_id;
     private String message;
     private int group_id;
-    private int dm_id;
+    private String name;
+    private String currentTime;
 
-    public DirectMsg(int message_count,int user_id, String message, int group_id,int dm_id){
+
+    public GroupChat(int message_count,int user_id, String message, int group_id, String name,String currentTime){
         this.message_count = message_count;
         this.user_id = user_id;
         this.message = message;
         this.group_id = group_id;
-        this.dm_id = dm_id;
+        this.name = name;
+        this.currentTime=currentTime;
     }
 
     public void setMessage_count(int message_count){this.message_count =message_count;}
@@ -32,7 +39,8 @@ public class DirectMsg {
     public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
-    public void setDm_id(int dm_id){this.dm_id=dm_id;}
+    public void setName(String name) { this.name = name; }
+    public void setCurrentTime(String currentTime) { this.currentTime = currentTime; }
 
     public int getGroup_id() {
         return group_id;
@@ -46,10 +54,11 @@ public class DirectMsg {
     public int getMessage_count() {
         return message_count;
     }
-    public int getDm_id(){return dm_id;}
+    public String getName(){return name;}
+    public String getCurrentTime(){return currentTime;}
 
     @Override
     public String toString(){
-        return "Message: " + message;
+        return "Message from " + name + " \n" + message + "\n"+currentTime;
     }
 }
