@@ -4,33 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="MainActivity">
-
-    <TextView
-        android:id="@+id/hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:text="kdfk"
-        android:id="@+id/viewgoal"
-        />
-
-    <Button
-        android:id="@+id/recyclerviewbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Recycler View" />
-
-</LinearLayout>
     tools:context=".MainActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -72,13 +45,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+        <!--android:flow_verticalAlign="center"-->
         <RelativeLayout
             android:id="@+id/secondBox"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            app:flow_verticalAlign="center"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/toolbar">

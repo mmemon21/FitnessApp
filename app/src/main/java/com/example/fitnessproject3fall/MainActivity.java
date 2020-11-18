@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-//This comment was made by Daniel Kufer so he could commit something.
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button button2 = findViewById(R.id.recyclerviewbutton);
+        Button button2 = findViewById(R.id.profileButton);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
