@@ -2,6 +2,7 @@ package com.example.fitnessproject3fall;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,8 +20,10 @@ public class LoginActivity  extends AppCompatActivity {
     private EditText password;
     private Button Loginbt;
     private Button Registerbt;
-
     private FitnessDB db;
+
+    public static int USER_ID;
+    public static int GROUP_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +46,13 @@ public class LoginActivity  extends AppCompatActivity {
                 User user = dao.logIn(user_name,pass_word);
 
                 if(user !=null){
+                    int user_id = user.getUser_id();
+                    int group_id = user.getGroup_id();
+                    LoginActivity.USER_ID = user_id;
+                    LoginActivity.GROUP_ID = group_id;
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+
                 }
                 else{
                     TextView message = findViewById(R.id.errorMessage);

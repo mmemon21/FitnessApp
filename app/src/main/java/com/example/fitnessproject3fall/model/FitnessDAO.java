@@ -29,6 +29,7 @@ public interface FitnessDAO {
     @Query("SELECT * FROM User where username LIKE :search")
     User getUsername(String search);
 
+
     @Insert
     void addUser(User user);
     @Insert
