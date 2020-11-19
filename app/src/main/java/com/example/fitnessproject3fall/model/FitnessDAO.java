@@ -17,9 +17,6 @@ public interface FitnessDAO {
     @Query("select * from DirectMsg")
     List<DirectMsg> getAllMessages();
 
-    @Query("select * from Coach")
-    List<Coach> getAllCoach();
-
     @Query("select * from GroupChat")
     List<GroupChat> getAllGroupMsg();
 

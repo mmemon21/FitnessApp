@@ -22,20 +22,17 @@ import java.util.List;
 import com.example.fitnessproject3fall.model.Coach;
 import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
+import com.example.fitnessproject3fall.model.User;
 
 public class ViewCoachActivity extends AppCompatActivity {
-    static List<Coach> coaches;
-    List<Coach> enrollments;
-    FitnessDAO aDB = FitnessDB.getFitnessDB(this).dao();
+    List<Coach> coaches;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
-        Log.d("LoginActivity", "onCreate called");
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_view_coach);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
+        FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
         /** If the user clicks the return button they are lead back to the main menu */
         Button return_main_button = findViewById(R.id.back);
         return_main_button.setOnClickListener(new View.OnClickListener() {
@@ -46,14 +43,7 @@ public class ViewCoachActivity extends AppCompatActivity {
             }
         });
 
-        /** A list to get all coaches, then if the assignment is not null a Recycler view is implemented to show coaches */
-        if(coaches == null) {
-            coaches = aDB.getAllCoach();
-        }
-
-        if(coaches != null)
-            Log.d("ViewcoachesActivity", "coaches's" + coaches.size());
-
+        coaches = dao.getAllCoach();
         RecyclerView rv2 = findViewById(R.id.recycler_view_coaches);
         rv2.setLayoutManager(new LinearLayoutManager(this));
         rv2.setAdapter(new Adapter());
@@ -66,21 +56,19 @@ public class ViewCoachActivity extends AppCompatActivity {
     private class Adapter extends RecyclerView.Adapter<ItemHolder> {
 
         @Override
-        public ViewCoachActivity.ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(ViewCoachActivity.this);
-            return new ViewCoachActivity.ItemHolder(layoutInflater, parent);
+            return new ItemHolder(layoutInflater, parent);
         }
 
         @Override
-        public void onBindViewHolder(ViewCoachActivity.ItemHolder holder, int position){
+        public void onBindViewHolder(ItemHolder holder, int position){
             holder.bind(coaches.get(position));
         }
 
         @Override
         public int getItemCount() {
-            if(coaches == null){
-                return 0;
-            }
+
             return coaches.size();
         }
     }
@@ -96,29 +84,33 @@ public class ViewCoachActivity extends AppCompatActivity {
             item.setText(f.toString());
 
             //make the item clickable
-            /*item.setOnClickListener(new View.OnClickListener() {
+            item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     //use position value  to get clicked data from list
                     try {
-                        int course_id = f.getCourse_id();
+                        FitnessDAO dao = FitnessDB.getFitnessDB(ViewCoachActivity.this).dao();
+                        int user_id = RegisterActivity.tempUserID;
+                        User newUser = dao.searchUser(user_id);
+                        newUser.setGroup_id(f.getGroup_id());
 
-                        //GradeDao daoo = GradeRoom.getGradeRoom(ViewAssignmentsActivity.this).dao();
-                        //Grade grades = daoo.searchGrade(course_id,MainActivity.userid);
-                        ArrayList<Assignment> assignmentsFilter = new ArrayList<Assignment>();
-                        for(Assignment i : assignments) {
-                            if(i.getCourse_id() == course_id){
-                                assignmentsFilter.add(i);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(ViewCoachActivity.this);
+                        builder.setTitle("Coach selected successfully!");
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //finish();
                             }
-                        }
+                        });
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
 
-                        ViewAssignmentsInOneCourseActivity.assignments = assignmentsFilter;
-                        Intent intent = new Intent(ViewAssignmentsActivity.this, ViewAssignmentsInOneCourseActivity.class);
+                        Intent intent = new Intent(ViewCoachActivity.this, LoginActivity.class);
                         startActivity(intent);
                     }catch (Exception e)
                     {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(ViewAssignmentsActivity.this);
-                        builder.setTitle("Please enter a valid course ID.");
+                        AlertDialog.Builder builder = new AlertDialog.Builder(ViewCoachActivity.this);
+                        builder.setTitle("Something went wrong");
                         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -129,7 +121,7 @@ public class ViewCoachActivity extends AppCompatActivity {
                         dialog.show();
                     }
                 }
-            });*/
+            });
         }
     }
 }
