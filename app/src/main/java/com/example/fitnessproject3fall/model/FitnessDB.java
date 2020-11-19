@@ -13,7 +13,7 @@ import androidx.room.RoomDatabase;
 public abstract class FitnessDB extends RoomDatabase{
     private static FitnessDB instance;
     public abstract FitnessDAO dao();
-    public UserDAO UserDAO;
+    public abstract UserDAO Userdao();
     public static FitnessDB getFitnessDB(final Context context){
         if(instance == null)
         {

@@ -14,6 +14,7 @@
         android:id ="@+id/et_UserName"
         android:layout_width="200dp"
         android:layout_height="35dp"
+        android:hint ="Username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -21,6 +22,7 @@
         android:id ="@+id/et_Password"
         android:layout_width="200dp"
         android:layout_height="35dp"
+        android:hint ="Password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_UserName"/>
 
@@ -28,6 +30,7 @@
         android:id ="@+id/et_FirstName"
         android:layout_width="200dp"
         android:layout_height="35dp"
+        android:hint ="First Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_Password"/>
 
@@ -35,6 +38,7 @@
         android:id ="@+id/et_LastName"
         android:layout_width="200dp"
         android:layout_height="35dp"
+        android:hint ="Last Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_FirstName"/>
 
@@ -42,21 +46,10 @@
         android:id ="@+id/et_Age"
         android:layout_width="200dp"
         android:layout_height="35dp"
+        android:hint ="Age"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_LastName"/>
-    <EditText
-        android:id="@+id/et_GroupId"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_Age" />
 
-    <EditText
-        android:id="@+id/et_Bio"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_GroupId" />
 
 
     <Button
@@ -65,6 +58,6 @@
         android:layout_height="45dp"
         android:text = "Register"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_Bio"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_Age"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

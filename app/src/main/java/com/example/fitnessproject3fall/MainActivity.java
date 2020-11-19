@@ -12,12 +12,14 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -28,15 +30,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FitnessDB.getFitnessDB(MainActivity.this).loadData(this);
-
         FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
 
         List<User> users;
         users = dao.getAllUser();
-//
-//        TextView msg = findViewById(R.id.hello);
-//        msg.setText(users.get(0).getFirst_name() + "this is new project");
+
+        User user = dao.searchUser(LoginActivity.USER_ID);
+
+        Toast.makeText(MainActivity.this, "Welcome " + user.getFirst_name() + " " + user.getLast_name(), Toast.LENGTH_SHORT).show();
 
         Button profileButton = findViewById(R.id.profileButton);
         profileButton.setOnClickListener(new View.OnClickListener() {
