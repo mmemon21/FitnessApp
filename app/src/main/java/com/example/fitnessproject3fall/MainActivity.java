@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewGoalsActivity.class);
+                Intent intent = new Intent(MainActivity.this, ViewGroupChatActivity.class);
                 startActivity(intent);
             }
         });
