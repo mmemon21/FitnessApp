@@ -39,11 +39,29 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(MainActivity.this, "Welcome " + user.getFirst_name() + " " + user.getLast_name(), Toast.LENGTH_SHORT).show();
 
+        Button profileButton = findViewById(R.id.profileButton);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
         Button calendarButton = findViewById(R.id.calendarButton);
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ViewGoalsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button bmiButton = findViewById(R.id.bmiButton);
+        bmiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BmiActivity.class);
                 startActivity(intent);
             }
         });
