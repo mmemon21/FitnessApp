@@ -64,8 +64,8 @@ public class RegisterActivity extends AppCompatActivity {
                     if (user == null) {
                         User new_user = new User(user_id, first_name, last_name, Age, "", "", user_name, pass_word, 0);
                         dao.addUser(new_user);
-                        Toast.makeText(RegisterActivity.this, "Welcome " + first_name + " " + last_name, Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
+                        Toast.makeText(RegisterActivity.this,  ""+ first_name + " " + last_name + " Welcome, Please Sign in", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                         startActivity(intent);
                     } else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
