@@ -49,7 +49,7 @@ public class ViewGroupChatActivity extends AppCompatActivity {
         String fName, lName = "";
         fName = dao.searchUser(2).getFirst_name();
         lName = lName +  dao.searchUser(2).getFirst_name().charAt(0);
-        String name = fName +"."+lName;
+        String name = fName +" "+lName + ". ";
         TextView msg = findViewById(R.id.group_name);
         msg.setText("Group " + group_id);
         send_msg.setOnClickListener(new View.OnClickListener() {
