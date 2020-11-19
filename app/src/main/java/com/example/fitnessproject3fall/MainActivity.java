@@ -38,11 +38,29 @@ public class MainActivity extends AppCompatActivity {
 //        TextView msg = findViewById(R.id.hello);
 //        msg.setText(users.get(0).getFirst_name() + "this is new project");
 
+        Button profileButton = findViewById(R.id.profileButton);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
         Button calendarButton = findViewById(R.id.calendarButton);
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ViewGoalsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button bmiButton = findViewById(R.id.bmiButton);
+        bmiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BmiActivity.class);
                 startActivity(intent);
             }
         });
