@@ -101,7 +101,7 @@
 
                     <Button
                         android:id="@+id/calendarButton"
-                        android:background="@drawable/calendar"
+                        android:background="@drawable/calender"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:layout_centerHorizontal="true"

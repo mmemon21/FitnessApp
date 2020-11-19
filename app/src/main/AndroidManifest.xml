@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessProject3Fall">
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
             <intent-filter>
@@ -32,6 +32,7 @@
 
         <activity
             android:name=".ViewCoachActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
             <intent-filter>
@@ -39,6 +40,70 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ViewProfileActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+
+        <activity
+
+            android:name=".BmiActivity"
+            android:label="FitnessProject3Fall"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".RegisterActivity"
+            android:label="FitnessProject3Fall"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ViewGroupChatActivity"
+            android:label="FitnessProject3Fall"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ViewDirectMsgActivity"
+            android:label="FitnessProject3Fall"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ViewDirectMsgActivity2"
+            android:label="FitnessProject3Fall"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

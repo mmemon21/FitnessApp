@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#234"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:text="Which Person do you want to msg" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/directMsg_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white" />
+
+
+    <Button
+        android:id="@+id/select_dmsg_button"
+        android:layout_width="143dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="120dp"
+        android:text="Select User" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:text="Enter User ID"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/direct_msg_id" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:text=""
+        android:id="@+id/error_direct_msg"/>
+
+</LinearLayout>
