@@ -26,4 +26,6 @@ public interface UserDAO {
     @Query("SELECT * FROM User where username LIKE :search")
     User getUsername(String search);
 
+    @Query("SELECT * FROM User where password LIKE :search")
+    User getPassword(String search);
 }

@@ -22,6 +22,13 @@ public interface FitnessDAO {
 
     @Query("select * from User where user_id =:user_id")
     User searchUser(int user_id);
+
+    @Query("select * from User where username =:username and password =:password")
+    User logIn(String username, String password);
+
+    @Query("SELECT * FROM User where username LIKE :search")
+    User getUsername(String search);
+
     @Insert
     void addUser(User user);
     @Insert

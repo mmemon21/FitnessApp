@@ -3,8 +3,11 @@ package com.example.fitnessproject3fall;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
 import com.example.fitnessproject3fall.model.User;
 
@@ -14,22 +17,61 @@ public class LoginActivity  extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
+    private Button Loginbt;
+    private Button Registerbt;
 
     private FitnessDB db;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        FitnessDB.getFitnessDB(LoginActivity.this).loadData(this);
 
+        FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
         username = findViewById(R.id.et_UserNameLogin);
         password = findViewById(R.id.et_PasswordLogin);
+        Loginbt = findViewById(R.id.bt_Login);
+        Registerbt = findViewById(R.id.bt_Login_Register);
 
-        db = FitnessDB.getFitnessDB(getApplicationContext());
+        Loginbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user_name = username.getText().toString();
+                String pass_word = password.getText().toString();
+
+                User user = dao.logIn(user_name,pass_word);
+
+                if(user !=null){
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    TextView message = findViewById(R.id.errorMessage);
+
+                    message.setText("Sorry username doesn't exist.");
+                }
+
+            }
+
+        });
+        Registerbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
+}
 
-    public void login(View view){
+/*
+        db = FitnessDB.getFitnessDB(getApplicationContext());
+        login();
+    }
+
+    public void login(){
         checkInput();
     }
 
@@ -50,7 +92,7 @@ public class LoginActivity  extends AppCompatActivity {
                 username.setError("Sorry it looks like that username doesn't have an account.");
             }
             if(passwordCorrect){
-                password.setError("Sorry your password your password didn't match");
+                password.setError("Sorry your password didn't match");
             }
         }
 
@@ -58,12 +100,14 @@ public class LoginActivity  extends AppCompatActivity {
     }
 
     public Boolean checkUsername(String username){
-        User dbUser = db.UserDAO.getUsername(username);
+        User dbUser = db.Userdao().getUsername(username);
         return dbUser == null;
     }
 
     public Boolean correctPassword(String username ,String password){
-        User dbUser = db.UserDAO.getUsername(username);
+        User dbUser = db.Userdao().getUsername(username);
         return dbUser.getPassword().equals(password);
     }
 }
+*/
+

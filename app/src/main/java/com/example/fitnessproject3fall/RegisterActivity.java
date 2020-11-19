@@ -2,8 +2,10 @@ package com.example.fitnessproject3fall;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
 import com.example.fitnessproject3fall.model.User;
 
@@ -18,9 +20,9 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText firstName;
     private  EditText lastName;
     private EditText age;
-    private EditText bio;
+    private Button Registerbt;
 
-    private FitnessDB db;
+    FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
 
     @Override
     protected  void onCreate(Bundle savedInstanceState) {
@@ -33,12 +35,18 @@ public class RegisterActivity extends AppCompatActivity {
         firstName = findViewById(R.id.et_FirstName);
         lastName = findViewById(R.id.et_LastName);
         age = findViewById(R.id.et_Age);
-        bio = findViewById(R.id.et_Bio);
+        Registerbt= findViewById(R.id.bt_Register);
 
-        db = FitnessDB.getFitnessDB(getApplicationContext());
+        dao = FitnessDB.getFitnessDB(this).dao();
+        Registerbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                register();
+            }
+        });
     }
 
-    public void register(View view){
+    public void register(){
         checkInput();
     }
 
@@ -49,8 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
         String first_name = firstName.getText().toString();
         String last_name = lastName.getText().toString();
         int Age = Integer.parseInt(age.getText().toString());
-        String Bio = bio.getText().toString();
-        List<User> userList = db.dao().getAllUser();
+        List<User> userList = dao.getAllUser();
         int user_size = userList.size();
         int user_id = user_size ++;
 
@@ -59,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(usernameCorrect && passwordCorrect && !first_name.isEmpty()&& !last_name.isEmpty() && !user_name.isEmpty() && !pass_word.isEmpty()){
 
-            db.dao().addUser(new User(user_id,first_name,last_name,Age," ",Bio,user_name,pass_word,0));
+            dao.addUser(new User(user_id,first_name,last_name,Age," ", " ",user_name,pass_word,0));
 
         }
 
@@ -75,9 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
         if(last_name.isEmpty()){
             lastName.setError("Whoops it looks like you forgot to enter your last name.");
         }
-        if(Bio.isEmpty()){
-            lastName.setError("Whoops it looks like you forgot to enter your bio.");
-        }
+
 
         else{
             if(!usernameCorrect){
@@ -90,7 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private Boolean differentUsername(String user_name){
-        User dbUser = db.UserDAO.getUsername(user_name);
+        User dbUser = dao.getUsername(user_name);
         return dbUser == null? true : false;
     }
 
