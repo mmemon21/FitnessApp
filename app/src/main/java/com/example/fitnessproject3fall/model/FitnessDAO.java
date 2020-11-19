@@ -33,8 +33,8 @@ public interface FitnessDAO {
     List<GroupChat> searchGroupMsg(int group_id);
 
 
-    @Query("select * from Goals where date =:date")
-    Goals searchGoal(String date);
+    @Query("select * from Goals where date =:date and group_id=:group_id")
+    Goals searchGoal(String date, int group_id);
 
     @Query("select * from User where user_id =:user_id")
     User searchUser(int user_id);

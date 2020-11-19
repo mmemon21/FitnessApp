@@ -44,14 +44,16 @@ public class ViewGroupChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_groupchat);
         FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
-        int group_id = 1000;
+        User user = dao.searchUser(LoginActivity.USER_ID);
+
+        String fName = user.getFirst_name();
+        String lName = user.getLast_name();
+
+        String name = fName + " " + lName +".";
         Button send_msg = findViewById(R.id.send_msg_group_button);
-        String fName, lName = "";
-        fName = dao.searchUser(2).getFirst_name();
-        lName = lName +  dao.searchUser(2).getFirst_name().charAt(0);
-        String name = fName +" "+lName + ". ";
+
         TextView msg = findViewById(R.id.group_name);
-        msg.setText("Group " + group_id);
+        msg.setText("Group " + LoginActivity.GROUP_ID);
         send_msg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,15 +62,23 @@ public class ViewGroupChatActivity extends AppCompatActivity {
                 int size_chat = dao.getAllGroupMsg().size();
                 size_chat++;
 
-                GroupChat chat = new GroupChat(size_chat, 2, message, 1000 , name, ""+currentTime);
+                GroupChat chat = new GroupChat(size_chat, 2, message, LoginActivity.GROUP_ID , name, ""+currentTime);
                 dao.addGroupChat(chat);
-                Toast.makeText(ViewGroupChatActivity.this, "Date: "+ currentTime, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewGroupChatActivity.this, "Message Sent!", Toast.LENGTH_SHORT).show();
                 finish();
                 startActivity(getIntent());
             }
         });
 
-        group_chat = dao.searchGroupMsg(group_id);
+        Button back_button =  findViewById(R.id.back_groupMsg);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        group_chat = dao.searchGroupMsg(LoginActivity.GROUP_ID);
         Log.d("ViewGroupChat", "GroupMessage's" + group_chat.size());
         RecyclerView rv = findViewById(R.id.group_chat_recycler_view);
         rv.setLayoutManager(new LinearLayoutManager(this));

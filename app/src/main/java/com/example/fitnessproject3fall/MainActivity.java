@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewGroupChatActivity.class);
+                Intent intent = new Intent(MainActivity.this, ViewGoalsActivity.class);
                 startActivity(intent);
             }
         });
@@ -62,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BmiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button chatButton = findViewById(R.id.chatButton);
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewGroupChatActivity.class);
                 startActivity(intent);
             }
         });

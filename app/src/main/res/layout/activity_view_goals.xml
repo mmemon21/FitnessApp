@@ -1,50 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
-    tools:context=".ViewGoalsActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ViewGoalsActivity"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/groupMyDate"
+        android:layout_width="227dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Group ..."
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
 
     <TextView
         android:id="@+id/myDate"
         android:layout_width="227dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="48dp"
-        android:text="dkfkf"
+        android:text="Select A Date to View Goals"
         android:textAlignment="center"
         android:textColor="#FFF"
-        android:textSize="23sp" />
-
-        <LinearLayout
-            android:layout_marginTop="48dp"
-            android:background="@drawable/bg_calen"
-            android:layout_marginLeft="44dp"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content">
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.108" />
 
 
     <CalendarView
         android:id="@+id/calender"
         android:layout_width="wrap_content"
-        android:layout_height="320dp">
+        android:layout_height="320dp"
+        android:background="@drawable/bg_calen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.527">
 
     </CalendarView>
 
-        </LinearLayout>
-
     <Button
-
-        android:text="Save my Date"
-        android:layout_marginTop="34dp"
-        android:layout_marginLeft="120dp"
-        android:paddingLeft="20dp"
+        android:id="@+id/return_calender"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="Return Main Menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.859" />
 
-    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
