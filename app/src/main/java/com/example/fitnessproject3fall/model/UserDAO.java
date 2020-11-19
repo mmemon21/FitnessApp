@@ -24,8 +24,8 @@ public interface UserDAO {
     List<User> getAllUsers();
 
     @Query("SELECT * FROM User where username LIKE :search")
-    User getUserWithUsername(String search);
+    User getUsername(String search);
 
-    @Query("Select * From User where user_id = :userId")
-    User getUserId (Integer userId);
+    @Query("SELECT * FROM User where password LIKE :search")
+    User getPassword(String search);
 }

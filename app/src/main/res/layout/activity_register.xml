@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="register"
+    tools:context=".RegisterActivity"
+    tools:ignore="OnClick">
+
+
+    <EditText
+        android:id ="@+id/et_UserName"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:hint ="Username"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id ="@+id/et_Password"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:hint ="Password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_UserName"/>
+
+    <EditText
+        android:id ="@+id/et_FirstName"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:hint ="First Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_Password"/>
+
+    <EditText
+        android:id ="@+id/et_LastName"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:hint ="Last Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_FirstName"/>
+
+    <EditText
+        android:id ="@+id/et_Age"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:hint ="Age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_LastName"/>
+
+
+
+    <Button
+        android:id ="@+id/bt_Register"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:text = "Register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_Age"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
