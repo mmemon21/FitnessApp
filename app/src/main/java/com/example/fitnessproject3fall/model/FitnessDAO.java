@@ -5,17 +5,18 @@ import java.util.List;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 @Dao
 public interface FitnessDAO {
     @Query("select * from User")//First Get all Objects in DB
     List<User> getAllUser();
 
-    @Query("select * from DirectMsg")
-    List<DirectMsg> getAllMessages();
-
     @Query("select * from Coach")
     List<Coach> getAllCoach();
+
+    @Query("select * from DirectMsg")
+    List<DirectMsg> getAllMessages();
 
     @Query("select * from GroupChat")
     List<GroupChat> getAllGroupMsg();
@@ -60,4 +61,7 @@ public interface FitnessDAO {
     void addVideos(Videos video);
     @Insert
     void addGroupChat(GroupChat groupChat);
+
+    @Update
+    void updateUser(User user);
 }
