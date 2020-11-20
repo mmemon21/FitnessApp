@@ -92,21 +92,37 @@ public class ViewCoachActivity extends AppCompatActivity {
                         FitnessDAO dao = FitnessDB.getFitnessDB(ViewCoachActivity.this).dao();
                         int user_id = RegisterActivity.tempUserID;
                         User newUser = dao.searchUser(user_id);
-                        newUser.setGroup_id(f.getGroup_id());
+                        newUser.setGroup_id(f.getUser_id());
 
-                        AlertDialog.Builder builder = new AlertDialog.Builder(ViewCoachActivity.this);
-                        builder.setTitle("Coach selected successfully!");
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                //finish();
-                            }
-                        });
-                        AlertDialog dialog = builder.create();
-                        dialog.show();
+                        if(newUser == null)
+                        {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(ViewCoachActivity.this);
+                            builder.setTitle("User is null?!");
+                            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //finish();
+                                }
+                            });
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
+                        }
+                        else
+                        {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(ViewCoachActivity.this);
+                            builder.setTitle("Coach selected successfully! Your group ID is " + newUser.getUser_id());
+                            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //finish();
+                                }
+                            });
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
 
-                        Intent intent = new Intent(ViewCoachActivity.this, LoginActivity.class);
-                        startActivity(intent);
+                            Intent intent = new Intent(ViewCoachActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                        }
                     }catch (Exception e)
                     {
                         AlertDialog.Builder builder = new AlertDialog.Builder(ViewCoachActivity.this);
