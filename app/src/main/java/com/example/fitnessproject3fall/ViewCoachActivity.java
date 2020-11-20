@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -93,36 +94,11 @@ public class ViewCoachActivity extends AppCompatActivity {
                         int user_id = RegisterActivity.tempUserID;
                         User newUser = dao.searchUser(user_id);
                         newUser.setGroup_id(f.getUser_id());
+                        dao.updateUser(newUser);
+                        Toast.makeText(ViewCoachActivity.this, "Coach: " + f.getFirst_name() + " " +f.getLast_name() + " has been selected!" , Toast.LENGTH_SHORT).show(); // non integer input
 
-                        if(newUser == null)
-                        {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(ViewCoachActivity.this);
-                            builder.setTitle("User is null?!");
-                            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //finish();
-                                }
-                            });
-                            AlertDialog dialog = builder.create();
-                            dialog.show();
-                        }
-                        else
-                        {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(ViewCoachActivity.this);
-                            builder.setTitle("Coach selected successfully! Your group ID is " + newUser.getUser_id());
-                            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //finish();
-                                }
-                            });
-                            AlertDialog dialog = builder.create();
-                            dialog.show();
-
-                            Intent intent = new Intent(ViewCoachActivity.this, LoginActivity.class);
-                            startActivity(intent);
-                        }
+                        Intent intent = new Intent(ViewCoachActivity.this, LoginActivity.class);
+                        startActivity(intent);
                     }catch (Exception e)
                     {
                         AlertDialog.Builder builder = new AlertDialog.Builder(ViewCoachActivity.this);

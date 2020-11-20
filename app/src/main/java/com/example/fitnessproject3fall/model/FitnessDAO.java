@@ -5,6 +5,7 @@ import java.util.List;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 @Dao
 public interface FitnessDAO {
@@ -60,4 +61,7 @@ public interface FitnessDAO {
     void addVideos(Videos video);
     @Insert
     void addGroupChat(GroupChat groupChat);
+
+    @Update
+    void updateUser(User user);
 }
