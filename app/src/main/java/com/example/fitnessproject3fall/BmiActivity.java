@@ -36,14 +36,16 @@ public class BmiActivity extends AppCompatActivity {
 
         if (heightStr != null && !"".equals(heightStr)
                 && weightStr != null  &&  !"".equals(weightStr)) {
-            float heightValue = Float.parseFloat(heightStr) / 100;
+            float heightValue = Float.parseFloat(heightStr);
             float weightValue = Float.parseFloat(weightStr);
 
             float bmi = weightValue / (heightValue * heightValue);
 
             displayBMI(bmi);
+
         }
     }
+    //bmi= (mass/height^2)
 
     private void displayBMI(float bmi) {
         String bmiLabel = "";

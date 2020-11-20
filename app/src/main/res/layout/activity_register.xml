@@ -7,51 +7,99 @@
     android:layout_height="match_parent"
     android:onClick="register"
     tools:context=".RegisterActivity"
-    tools:ignore="OnClick">
+    tools:ignore="OnClick"
+    android:background="@drawable/grad">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:fontFamily="@font/alegreya_sans_sc_bold_italic"
+            android:paddingLeft="70dp"
+            android:text="Create an Account"
+            android:textColor="#121111"
+            android:textSize="36sp" />
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="100dp"
+    android:paddingTop="100dp">
 
     <EditText
-        android:id ="@+id/et_UserName"
+        android:id="@+id/et_UserName"
         android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:hint ="Username"
+        android:layout_height="45dp"
+        android:hint="Username"
+        android:textColor="#000000"
+        android:textColorLink="#131212"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        app:layout_constraintTop_toTopOf="parent" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="100dp"
+    android:paddingTop="150dp">
     <EditText
         android:id ="@+id/et_Password"
         android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:hint ="Password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_UserName"/>
-
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="100dp"
+        android:paddingTop="200dp">
     <EditText
         android:id ="@+id/et_FirstName"
         android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:hint ="First Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_Password"/>
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="100dp"
+        android:paddingTop="250dp">
     <EditText
         android:id ="@+id/et_LastName"
         android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:hint ="Last Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_FirstName"/>
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="100dp"
+        android:paddingTop="300dp">
     <EditText
         android:id ="@+id/et_Age"
         android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:hint ="Age"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_LastName"/>
 
-
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="100dp"
+        android:paddingTop="350dp">
     <Button
         android:id ="@+id/bt_Register"
         android:layout_width="200dp"
@@ -60,4 +108,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_Age"/>
 
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
