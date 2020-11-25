@@ -16,7 +16,6 @@ import androidx.room.RoomDatabase;
 public abstract class FitnessDB extends RoomDatabase{
     private static FitnessDB instance;
     public abstract FitnessDAO dao();
-    public abstract UserDAO Userdao();
     public static FitnessDB getFitnessDB(final Context context){
         if(instance == null)
         {
@@ -126,16 +125,17 @@ public abstract class FitnessDB extends RoomDatabase{
     }
     private void loadVideos(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();
-        Videos video1 = new Videos(1, 1000, "https://www.youtube.com/watch?v=28CIFOhkKrU");
-        Videos video2 = new Videos(2, 1000, "https://www.youtube.com/watch?v=05DpAV5M_Lk");
-        Videos video3 = new Videos(3, 2000, "https://www.youtube.com/watch?v=28CIFOhkKrU");
-        Videos video4 = new Videos(4, 2000, "https://www.youtube.com/watch?v=05DpAV5M_Lk");
+        Videos video1 = new Videos(1, 1000, "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/28CIFOhkKrU\" frameborder=\"0\" allowfullscreen></iframe>");
+        Videos video2 = new Videos(2, 1000, "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/05DpAV5M_Lk\" frameborder=\"0\" allowfullscreen></iframe>");
+        Videos video3 = new Videos(3, 2000, "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/28CIFOhkKrU\" frameborder=\"0\" allowfullscreen></iframe>");
+        Videos video4 = new Videos(4, 2000, "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/05DpAV5M_Lk\" frameborder=\"0\" allowfullscreen></iframe>");
 
         dao.addVideos(video1);
         dao.addVideos(video2);
         dao.addVideos(video3);
         dao.addVideos(video4);
     }
+
 
 
 }

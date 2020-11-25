@@ -72,6 +72,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button view_videos_btn = findViewById(R.id.vidsButton);
+        view_videos_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewVideosActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

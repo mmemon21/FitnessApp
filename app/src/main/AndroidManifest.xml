@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fitnessproject3fall">
+    package="com.example.fitnessproject3fall"
+    android:installLocation="preferExternal">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -107,6 +113,16 @@
 
         <activity
             android:name=".ViewDirectMsgActivity2"
+            android:label="FitnessProject3Fall"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ViewVideosActivity"
             android:label="FitnessProject3Fall"
             android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
             <intent-filter>

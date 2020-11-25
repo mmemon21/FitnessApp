@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (user == null) {
                         User new_user = new User(user_id, first_name, last_name, Age, "", "", user_name, pass_word, 0);
                         dao.addUser(new_user);
-                        Toast.makeText(RegisterActivity.this,  ""+ first_name + " " + last_name + " Welcome, Please Sign in", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this,  ""+ first_name + " " + last_name + " Welcome, Now Please select a Coach.", Toast.LENGTH_SHORT).show();
                         RegisterActivity.tempUserID = user_id;
                         Intent intent = new Intent(RegisterActivity.this,ViewCoachActivity.class);
                         startActivity(intent);
