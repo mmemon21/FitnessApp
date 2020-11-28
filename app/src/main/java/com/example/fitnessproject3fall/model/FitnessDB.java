@@ -79,9 +79,9 @@ public abstract class FitnessDB extends RoomDatabase{
     private void loadCoach(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();
         Coach coach1 = new Coach(1000, "Glen", "Bruns",40, "", "hello I'm glen bruns", "glen445",
-                "glen123", 1);
+                "glen123", 1000);
         Coach coach2 = new Coach(2000, "Drew", "Clinkenbeard",35, "", "hello i'm dr C", "drew445",
-                "drew123", 2);
+                "drew123", 2000);
         dao.addCoach(coach1);
         dao.addCoach(coach2);
     }

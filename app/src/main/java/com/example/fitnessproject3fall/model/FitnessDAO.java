@@ -37,7 +37,7 @@ public interface FitnessDAO {
     List<Videos> searchVideos(int group_id);
 
     @Query("select * from Coach where user_id=:user_id")
-    Coach seachCoach(int user_id);
+    Coach searchCoach(int user_id);
 
     @Query("select * from Goals where date =:date and group_id=:group_id")
     Goals searchGoal(String date, int group_id);
@@ -51,6 +51,8 @@ public interface FitnessDAO {
     @Query("SELECT * FROM User where username LIKE :search")
     User getUsername(String search);
 
+    @Query("select * from Coach where username =:username AND password=:password")
+    Coach loginCoach(String username, String password);
 
     @Insert
     void addUser(User user);

@@ -27,7 +27,7 @@ public class ViewVideosActivity extends AppCompatActivity {
         FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
 
         videosList = dao.searchVideos(LoginActivity.GROUP_ID);
-        Coach coach = dao.seachCoach(LoginActivity.GROUP_ID);
+        Coach coach = dao.searchCoach(LoginActivity.GROUP_ID);
         msg.setText("Here are some videos that coach " + coach.getFirst_name() + " provided. ");
         recyclerView = (RecyclerView) findViewById(R.id.view_videos_recyclerview);
         recyclerView.setHasFixedSize(true);
