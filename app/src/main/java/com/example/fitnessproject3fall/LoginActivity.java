@@ -58,7 +58,7 @@ public class LoginActivity  extends AppCompatActivity {
                     startActivity(intent);
 
                 }//First check if User Exists
-                Coach coach = dao.loginCoach(user_name, pass_word);
+                /*Coach coach = dao.loginCoach(user_name, pass_word);
                 if(coach != null){
                     int user_id =  coach.getUser_id();
                     int group_id = coach.getGroup_id();
@@ -66,7 +66,8 @@ public class LoginActivity  extends AppCompatActivity {
                     LoginActivity.GROUP_ID = group_id;
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
-                }
+                }*/
+
                 else{
                     TextView message = findViewById(R.id.errorMessage);
 
