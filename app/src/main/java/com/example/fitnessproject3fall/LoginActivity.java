@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.fitnessproject3fall.model.Coach;
 import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
 import com.example.fitnessproject3fall.model.User;
@@ -50,10 +52,22 @@ public class LoginActivity  extends AppCompatActivity {
                     int group_id = user.getGroup_id();
                     LoginActivity.USER_ID = user_id;
                     LoginActivity.GROUP_ID = group_id;
+                    Toast.makeText(LoginActivity.this, "Welcome " + user.getFirst_name() + " " + user.getLast_name(), Toast.LENGTH_SHORT).show();
+
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
 
-                }
+                }//First check if User Exists
+                /*Coach coach = dao.loginCoach(user_name, pass_word);
+                if(coach != null){
+                    int user_id =  coach.getUser_id();
+                    int group_id = coach.getGroup_id();
+                    LoginActivity.USER_ID = user_id;
+                    LoginActivity.GROUP_ID = group_id;
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }*/
+
                 else{
                     TextView message = findViewById(R.id.errorMessage);
 

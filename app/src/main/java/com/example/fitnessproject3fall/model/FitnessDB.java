@@ -51,12 +51,17 @@ public abstract class FitnessDB extends RoomDatabase{
                 "kevin456", "kevin456", 2000);
         User user5 = new User(5, "Mustafa", "Memon", 23, "", "Hello I'm Mustafa... edit later",
                 "mustafa789", "mustafa789", 2000);
-
+        User user6 = new User(1000, "Glen", "Bruns",40, "", "hello I'm glen bruns", "glen445",
+                "glen123", 1000);
+        User user7 = new User(2000, "Drew", "Clinkenbeard",35, "", "hello i'm dr C", "drew445",
+                "drew123", 2000);
         dao.addUser(user1);
         dao.addUser(user2);
         dao.addUser(user3);
         dao.addUser(user4);
         dao.addUser(user5);
+        dao.addUser(user6);
+        dao.addUser(user7);
     }
 
     private void loadDirectMsg(Context context){
@@ -79,9 +84,9 @@ public abstract class FitnessDB extends RoomDatabase{
     private void loadCoach(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();
         Coach coach1 = new Coach(1000, "Glen", "Bruns",40, "", "hello I'm glen bruns", "glen445",
-                "glen123", 1);
+                "glen123", 1000);
         Coach coach2 = new Coach(2000, "Drew", "Clinkenbeard",35, "", "hello i'm dr C", "drew445",
-                "drew123", 2);
+                "drew123", 2000);
         dao.addCoach(coach1);
         dao.addCoach(coach2);
     }

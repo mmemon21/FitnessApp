@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         User user = dao.searchUser(LoginActivity.USER_ID);
 
-        Toast.makeText(MainActivity.this, "Welcome " + user.getFirst_name() + " " + user.getLast_name(), Toast.LENGTH_SHORT).show();
-
         Button profileButton = findViewById(R.id.profileButton);
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -72,6 +72,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
+                    android:text="Member Status"
+                    android:textColor="@color/white"
+                    android:textSize="19sp" />
+                <TextView
+                    android:id="@+id/memberstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
                     android:text="Student"
                     android:textColor="@color/white"
                     android:textSize="25sp" />
@@ -92,8 +100,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -160,6 +168,27 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bio"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/viewBio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Bio"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <Button
