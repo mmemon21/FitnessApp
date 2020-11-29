@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#678"
+    android:background="@drawable/grad"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent">
 
@@ -12,76 +12,68 @@
         android:id="@+id/group_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
         android:gravity="center"
-        android:textSize="24dp"
         android:text="Group .. "
         android:textAlignment="center"
-        android:textColor="#FFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#0C0C0C"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/group_chat_recycler_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/group_chat_recycler_view"
         android:layout_width="400dp"
-        android:layout_height="169dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.144" />
-
-    <TextView
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Msg Here"
-        android:textColor="#FFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="118dp"
+        app:layout_constraintBottom_toTopOf="@+id/send_msg_group"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintTop_toBottomOf="@+id/group_name" />
 
     <EditText
         android:id="@+id/send_msg_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp"
+        android:hint="Enter message here"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/back_groupMsg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459" />
+        app:layout_constraintTop_toBottomOf="@+id/group_chat_recycler_view" />
 
     <Button
         android:id="@+id/send_msg_group_button"
         android:layout_width="208dp"
         android:layout_height="58dp"
+        android:layout_marginTop="92dp"
         android:text="Send Message"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.591" />
+        app:layout_constraintTop_toBottomOf="@+id/send_msg_group" />
 
     <Button
         android:id="@+id/back_groupMsg"
         android:layout_width="121dp"
         android:layout_height="59dp"
+        android:layout_marginTop="92dp"
         android:paddingLeft="20dp"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592" />
+        app:layout_constraintTop_toBottomOf="@+id/send_msg_group" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
