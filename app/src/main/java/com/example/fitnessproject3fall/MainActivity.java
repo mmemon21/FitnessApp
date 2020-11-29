@@ -79,6 +79,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button nutritionButton = findViewById(R.id.nutritionButton);
+        nutritionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NutritionActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
