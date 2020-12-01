@@ -40,21 +40,21 @@ public abstract class FitnessDB extends RoomDatabase{
     }
     private void loadUsers(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();
-        User user1 = new User(1, "Raul", "Perez", 21,"", "Hello my name Is raul ** edit later",
-                "raul676", "RaulP676",1000);
-        User user2 = new User(2, "Joe", "Ramirez", 22, "","hello I'm Joe... edit later",
-                "joem445", "joeMon455", 1000);
-        User user3 = new User(3, "Daniel", "Kufer", 22, "", "Hello I'm daniel.. edit later",
-                "daniel123", "daniel123", 1000);
+        User user1 = new User(1, "Raul", "Perez", 21,"",
+                "Hello my name Is raul ** edit later","raul676", "RaulP676",1000);
+        User user2 = new User(2, "Joe", "Ramirez", 22, "",
+                "hello I'm Joe... edit later", "joem445", "joeMon455", 1000);
+        User user3 = new User(3, "Daniel", "Kufer", 22, "",
+                "Hello I'm daniel.. edit later","daniel123", "daniel123", 1000);
 
-        User user4 = new User(4, "Kevin", "Piffero", 24, "", "Hello I'm Kevin... edit later",
-                "kevin456", "kevin456", 2000);
-        User user5 = new User(5, "Mustafa", "Memon", 23, "", "Hello I'm Mustafa... edit later",
-                "mustafa789", "mustafa789", 2000);
-        User user6 = new User(1000, "Glen", "Bruns",40, "", "hello I'm glen bruns", "glen445",
-                "glen123", 1000);
-        User user7 = new User(2000, "Drew", "Clinkenbeard",35, "", "hello i'm dr C", "drew445",
-                "drew123", 2000);
+        User user4 = new User(4, "Kevin", "Piffero", 24, "",
+                "Hello I'm Kevin... edit later", "kevin456", "kevin456", 2000);
+        User user5 = new User(5, "Mustafa", "Memon", 23, "",
+                "Hello I'm Mustafa... edit later", "mustafa789", "mustafa789", 2000);
+        User user6 = new User(1000, "Glen", "Bruns",40, "",
+                "hello I'm glen bruns", "glen445", "glen123", 1000);
+        User user7 = new User(2000, "Drew", "Clinkenbeard",35, "",
+                "hello i'm dr C", "drew445", "drew123", 2000);
         dao.addUser(user1);
         dao.addUser(user2);
         dao.addUser(user3);

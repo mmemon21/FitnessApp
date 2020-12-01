@@ -59,6 +59,16 @@
         </activity>
 
         <activity
+            android:name=".AdminActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".ViewProfileActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
@@ -68,7 +78,15 @@
             </intent-filter>
         </activity>
 
-
+        <activity
+            android:name=".ViewAdminProfileActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity
 
@@ -141,6 +159,15 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".EditAdminProfileActivity"
+            android:label="FitnessProject3Fall"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

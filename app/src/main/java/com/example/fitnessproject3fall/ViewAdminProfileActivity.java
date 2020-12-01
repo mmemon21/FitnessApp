@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,18 +13,16 @@ import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
 import com.example.fitnessproject3fall.model.User;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewProfileActivity extends AppCompatActivity {
+public class ViewAdminProfileActivity extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_profile);
+        setContentView(R.layout.activity_view_admin_profile);
         FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
         User user = dao.searchUser(LoginActivity.USER_ID);
         Coach coach = dao.searchCoach(LoginActivity.GROUP_ID);
@@ -41,28 +38,28 @@ public class ViewProfileActivity extends AppCompatActivity {
                 status = true;
             }
         }
-        TextView status_text = findViewById(R.id.memberstatus);
+        TextView status_text = findViewById(R.id.memberstatusA);
         if(status){
             status_text.setText("Coach");
         }else{
             status_text.setText("Group Member");
         }
-        TextView full_name = findViewById(R.id.fullName);
+        TextView full_name = findViewById(R.id.fullNameA);
         full_name.setText(user.getFirst_name() + " " + user.getLast_name());
 
-        TextView age = findViewById(R.id.ageTextView);
+        TextView age = findViewById(R.id.ageTextViewA);
         age.setText(""+user.getAge());
 
-        TextView coach_name = findViewById(R.id.coachTextView);
+        TextView coach_name = findViewById(R.id.coachTextViewA);
         coach_name.setText(coach.getFirst_name() + " " + coach.getLast_name());
 
-        TextView user_name = findViewById(R.id.usernameTextView);
+        TextView user_name = findViewById(R.id.usernameTextViewA);
         user_name.setText(user.getUsername());
 
-        TextView bio = findViewById(R.id.viewBio);
+        TextView bio = findViewById(R.id.viewBioA);
         bio.setText(user.getBio());
 
-        Button menuButton = findViewById(R.id.menuButton);
+        Button menuButton = findViewById(R.id.menuButtonA);
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,11 +67,11 @@ public class ViewProfileActivity extends AppCompatActivity {
             }
         });
 
-        Button edit_profile = findViewById(R.id.editProfileButton);
+        Button edit_profile = findViewById(R.id.editProfileButtonA);
         edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ViewProfileActivity.this, EditProfileActivity.class);
+                Intent intent = new Intent(ViewAdminProfileActivity.this, EditAdminProfileActivity.class);
                 startActivity(intent);
             }
         });
