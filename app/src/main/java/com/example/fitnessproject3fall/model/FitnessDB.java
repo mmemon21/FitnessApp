@@ -40,7 +40,7 @@ public abstract class FitnessDB extends RoomDatabase{
     }
     private void loadUsers(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();
-        User user1 = new User(1, "Raul", "Perez", 21,"", "Hello my name Is raul ** edit later",
+        User user1 = new User(1, "Raul", "Perez", 21,"https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/images%2F7a9d11fb-9849-43bf-9a03-2bd80dcfec92?alt=media&token=c5702b4c-3ad7-4c39-b408-c4e15e274428", "Hello my name Is raul ** edit later",
                 "raul676", "RaulP676",1000);
         User user2 = new User(2, "Joe", "Ramirez", 22, "","hello I'm Joe... edit later",
                 "joem445", "joeMon455", 1000);
@@ -51,9 +51,9 @@ public abstract class FitnessDB extends RoomDatabase{
                 "kevin456", "kevin456", 2000);
         User user5 = new User(5, "Mustafa", "Memon", 23, "", "Hello I'm Mustafa... edit later",
                 "mustafa789", "mustafa789", 2000);
-        User user6 = new User(1000, "Glen", "Bruns",40, "", "hello I'm glen bruns", "glen445",
+        User user6 = new User(1000, "Glen", "Bruns",40, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/grb-headshot.jpg?alt=media&token=77d9170f-0ee8-47ce-8452-cc0681448b06", "hello I'm glen bruns", "glen445",
                 "glen123", 1000);
-        User user7 = new User(2000, "Drew", "Clinkenbeard",35, "", "hello i'm dr C", "drew445",
+        User user7 = new User(2000, "Drew", "Clinkenbeard",35, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/profile.JPG?alt=media&token=fcf817c2-be67-4008-acc2-9ebf94a9bd24", "hello i'm dr C", "drew445",
                 "drew123", 2000);
         dao.addUser(user1);
         dao.addUser(user2);
@@ -93,17 +93,17 @@ public abstract class FitnessDB extends RoomDatabase{
 
     private void loadGoals(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();
-        Goals goal1 = new Goals(1, 1000,"100 Push Ups\n+200 Situps + 20 min run","11/23/20");
-        Goals goal2 = new Goals(2, 1000,"50 Push Ups\n+100 Situps + 15 min sprints","11/24/20");
-        Goals goal3 = new Goals(3, 1000,"150 Push Ups\n+100 Situps + 5 min run","11/25/20");
-        Goals goal4 = new Goals(4, 1000,"70 Push Ups\n+200 Situps + 40 min run","11/26/20");
-        Goals goal5 = new Goals(5, 1000,"60 Push Ups\n+200 Situps + 30 min run","11/27/20");
+        Goals goal1 = new Goals(1, 1000,"100 Push Ups\n+200 Situps + 20 min run","12/23/20");
+        Goals goal2 = new Goals(2, 1000,"50 Push Ups\n+100 Situps + 15 min sprints","12/24/20");
+        Goals goal3 = new Goals(3, 1000,"150 Push Ups\n+100 Situps + 5 min run","12/25/20");
+        Goals goal4 = new Goals(4, 1000,"70 Push Ups\n+200 Situps + 40 min run","12/26/20");
+        Goals goal5 = new Goals(5, 1000,"60 Push Ups\n+200 Situps + 30 min run","12/27/20");
 
-        Goals goal6 = new Goals(6, 2000,"100 Push Ups\n+200 Situps + 20 min run","11/23/20");
-        Goals goal7 = new Goals(7, 2000,"50 Push Ups\n+100 Situps + 20 min run","11/24/20");
-        Goals goal8 = new Goals(8, 2000,"150 Push Ups\n+100 Situps + 5 min run","11/25/20");
-        Goals goal9 = new Goals(9, 2000,"70 Push Ups\n+200 Situps + 40 min run","11/26/20");
-        Goals goal10 = new Goals(10, 2000,"60 Push Ups\n+200 Situps + 30 min run","11/27/20");
+        Goals goal6 = new Goals(6, 2000,"100 Push Ups\n+200 Situps + 20 min run","12/23/20");
+        Goals goal7 = new Goals(7, 2000,"50 Push Ups\n+100 Situps + 20 min run","12/24/20");
+        Goals goal8 = new Goals(8, 2000,"150 Push Ups\n+100 Situps + 5 min run","12/25/20");
+        Goals goal9 = new Goals(9, 2000,"70 Push Ups\n+200 Situps + 40 min run","12/26/20");
+        Goals goal10 = new Goals(10, 2000,"60 Push Ups\n+200 Situps + 30 min run","12/27/20");
         dao.addGoals(goal1);
         dao.addGoals(goal2);
         dao.addGoals(goal3);
