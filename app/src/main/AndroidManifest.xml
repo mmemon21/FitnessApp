@@ -152,6 +152,47 @@
         </activity>
 
 
+        <activity
+            android:name=".SuggestedActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SuggestedVideoActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SuggestedGoalsActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SuggestedNutritionActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FitnessProject3Fall.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
