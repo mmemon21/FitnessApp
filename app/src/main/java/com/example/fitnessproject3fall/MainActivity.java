@@ -89,6 +89,33 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button nutritionButton = findViewById(R.id.nutritionButton);
+        nutritionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NutritionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button suggestedButton = findViewById(R.id.suggestionButton);
+        suggestedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SuggestedActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button logoutButton = findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

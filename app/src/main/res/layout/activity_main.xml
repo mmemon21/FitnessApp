@@ -73,13 +73,13 @@
                 android:id="@+id/logoutButton"
                 android:layout_width="75dp"
                 android:layout_height="43dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginLeft="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="200dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="3dp"
                 android:layout_marginRight="3dp"
                 android:text="Logout"
-                android:textSize="9dp" />
+                android:textSize="9dp"></Button>
         </RelativeLayout>
         <LinearLayout
             android:id="@+id/linearLayout"
