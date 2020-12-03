@@ -68,6 +68,18 @@
                 android:layout_marginRight="3dp"
                 android:text="Profile"
                 android:textSize="9dp"></Button>
+
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="75dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginRight="3dp"
+                android:text="Logout"
+                android:textSize="9dp"></Button>
         </RelativeLayout>
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -262,15 +274,15 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/adminButton"
+                        android:layout_below="@id/suggestionButton"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/calligraffitti"
-                        android:text="Admin Hub"
+                        android:text="Suggestions"
                         android:textSize="24sp" />
 
                     <Button
-                        android:id="@+id/adminButton"
+                        android:id="@+id/suggestionButton"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:layout_centerHorizontal="true"

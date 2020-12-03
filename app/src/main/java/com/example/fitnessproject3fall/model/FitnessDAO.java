@@ -21,6 +21,15 @@ public interface FitnessDAO {
     @Query("select * from GroupChat")
     List<GroupChat> getAllGroupMsg();
 
+    @Query("select * from Goals")
+    List<Goals> getAllGoals();
+
+    @Query("select * from Links")
+    List<Links> getAllNutrition();
+
+    @Query("select * from Videos")
+    List<Videos> getAllVideos();
+
     @Query("select * from User where group_id=:group_id")
     List<User> searchUsersByGroup(int group_id);
 
