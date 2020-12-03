@@ -54,7 +54,6 @@ public class EditAdminProfileActivity extends AppCompatActivity {
             }
         });
 
-
         Button backbtn = findViewById(R.id.back_editprofileA);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,8 +61,6 @@ public class EditAdminProfileActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 }
 
