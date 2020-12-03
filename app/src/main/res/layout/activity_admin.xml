@@ -274,7 +274,7 @@
                         android:id="@+id/textViewA9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/adminButtonA"
+                        android:layout_below="@+id/suggestionButton"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/calligraffitti"
@@ -282,7 +282,7 @@
                         android:textSize="24sp" />
 
                     <Button
-                        android:id="@+id/adminButtonA"
+                        android:id="@+id/suggestionButton"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:layout_centerHorizontal="true"

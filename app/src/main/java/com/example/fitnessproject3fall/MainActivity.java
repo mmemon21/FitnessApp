@@ -98,24 +98,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        Button suggestedButton = findViewById(R.id.suggestionButton);
-        suggestedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SuggestedActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button logoutButton = findViewById(R.id.logoutButton);
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override

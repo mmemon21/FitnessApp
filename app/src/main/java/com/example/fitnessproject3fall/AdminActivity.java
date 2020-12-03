@@ -35,7 +35,8 @@ public class AdminActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(AdminActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -43,7 +44,7 @@ public class AdminActivity extends AppCompatActivity {
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminActivity.this, ViewAdminProfileActivity.class);
+                Intent intent = new Intent(AdminActivity.this, ViewProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -81,6 +82,15 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminActivity.this, ViewVideosActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button suggestedButton = findViewById(R.id.suggestionButton);
+        suggestedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, SuggestedActivity.class);
                 startActivity(intent);
             }
         });
