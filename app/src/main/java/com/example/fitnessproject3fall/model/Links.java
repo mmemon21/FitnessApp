@@ -25,4 +25,9 @@ public class Links {
     public int getGroup_id(){return group_id;}
     public int getCount() { return count;}
     public String getLink_url(){return link_url;}
+
+    @Override
+    public String toString(){
+        return "Link:" + link_url + "\n";
+    }
 }

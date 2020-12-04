@@ -24,6 +24,9 @@ public interface FitnessDAO {
     @Query("select * from Goals")
     List<Goals> getAllGoals();
 
+    @Query("select * from Links where group_id=:group_id")
+    List<Links> searchLinks(int group_id);
+
     @Query("select * from Links")
     List<Links> getAllNutrition();
 
