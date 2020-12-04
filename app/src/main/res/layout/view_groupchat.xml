@@ -13,8 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="86dp"
+        android:fontFamily="@font/alegreya_sc_bold_italic"
         android:gravity="center"
-        android:text="Group .. "
+        android:text="Group Chat!\n Ask Questions and Messages to everyone in the group."
         android:textAlignment="center"
         android:textColor="#0C0C0C"
         android:textSize="24dp"
@@ -22,19 +23,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/group_chat_recycler_view"
         android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="59dp"
-        android:layout_marginBottom="118dp"
-        app:layout_constraintBottom_toTopOf="@+id/send_msg_group"
+        android:layout_height="180dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back_groupMsg" />
+        app:layout_constraintTop_toBottomOf="@+id/back_groupMsg"
+        app:layout_constraintVertical_bias="0.632" />
 
     <EditText
         android:id="@+id/send_msg_group"
@@ -58,9 +58,10 @@
         android:text="Send Message"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/send_msg_group" />
+        app:layout_constraintTop_toBottomOf="@+id/send_msg_group"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/back_groupMsg"
@@ -71,7 +72,6 @@
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/send_msg_group" />
 

@@ -1,66 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/grad">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/grad"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
 
-    <LinearLayout
+
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NUTRITION ACTIVITY"
-            android:fontFamily="@font/alegreya_sc_bold_italic"
-            android:textSize="30sp"
-            android:layout_marginLeft="50dp"/>
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="568dp"
+        android:fontFamily="@font/alegreya_sc_bold_italic"
+        android:gravity="center"
+        android:text="NUTRITION ACTIVITY\n Here are the some resources to help you out!."
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="300dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/screenshot" />
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="376dp"
+        android:src="@drawable/screenshot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nutrition_list"
+        android:layout_width="400dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="188dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="350dp"
-                android:autoLink="all"
-                android:background="#272323"
-                android:text="@string/link_article"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="600dp"
-            android:layout_marginStart="80dp">
-            <Button
-                android:id="@+id/backButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Main Menu" />
-
-        </LinearLayout>
-
-    </RelativeLayout>
+    <Button
+        android:id="@+id/backButtonNutri"
+        android:layout_width="153dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="84dp"
+        android:layout_weight="1"
+        android:text="Main Menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

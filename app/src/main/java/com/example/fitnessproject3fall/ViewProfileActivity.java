@@ -159,7 +159,7 @@ public class ViewProfileActivity extends AppCompatActivity {
 
     private void choosePicture(){
         Intent intent = new Intent();
-        intent.setType("image/*");
+        intent.setType("images/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, 1);
     }

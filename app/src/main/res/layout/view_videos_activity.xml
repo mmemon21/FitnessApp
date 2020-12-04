@@ -11,10 +11,10 @@
     <TextView
         android:id="@+id/textview_videos"
         android:layout_width="397dp"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/alegreya_sc_bold_italic"
         android:gravity="center"
-        android:text="..."
+        android:text="Here are some videos that coach *insert* provided. "
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,14 +24,26 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/view_videos_recyclerview"
-        android:layout_width="401dp"
-        android:layout_height="431dp"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366" />
+        app:layout_constraintVertical_bias="0.396" />
+
+    <Button
+        android:id="@+id/finsih_videosBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Main Menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.775" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
