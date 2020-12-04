@@ -2,32 +2,27 @@ package com.example.fitnessproject3fall;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
 import com.example.fitnessproject3fall.model.User;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.util.Log;
-import android.view.View;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class AdminActivity extends AppCompatActivity {
 
     public static boolean admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_admin);
 
         FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
 
@@ -36,65 +31,66 @@ public class MainActivity extends AppCompatActivity {
 
         User user = dao.searchUser(LoginActivity.USER_ID);
 
-        Button logoutButton = findViewById(R.id.logoutButton);
+        Button logoutButton = findViewById(R.id.logoutButtonA);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(AdminActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
-        Button profileButton = findViewById(R.id.profileButton);
+        Button profileButton = findViewById(R.id.profileButtonA);
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewProfileActivity.class);
+                Intent intent = new Intent(AdminActivity.this, ViewProfileActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button calendarButton = findViewById(R.id.calendarButton);
+        Button calendarButton = findViewById(R.id.calendarButtonA);
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewGoalsActivity.class);
+                Intent intent = new Intent(AdminActivity.this, ViewGoalsActivity.class);
                 startActivity(intent);
             }
         });
 
 
-        Button bmiButton = findViewById(R.id.bmiButton);
+        Button bmiButton = findViewById(R.id.bmiButtonA);
         bmiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BmiActivity.class);
+                Intent intent = new Intent(AdminActivity.this, BmiActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button chatButton = findViewById(R.id.chatButton);
+        Button chatButton = findViewById(R.id.chatButtonA);
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewGroupChatActivity.class);
+                Intent intent = new Intent(AdminActivity.this, ViewGroupChatActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button view_videos_btn = findViewById(R.id.vidsButton);
+        Button view_videos_btn = findViewById(R.id.vidsButtonA);
         view_videos_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewVideosActivity.class);
+                Intent intent = new Intent(AdminActivity.this, ViewVideosActivity.class);
                 startActivity(intent);
             }
         });
 
-        Button nutritionButton = findViewById(R.id.nutritionButton);
-        nutritionButton.setOnClickListener(new View.OnClickListener() {
+        Button suggestedButton = findViewById(R.id.suggestionButton);
+        suggestedButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NutritionActivity.class);
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminActivity.this, SuggestedActivity.class);
                 startActivity(intent);
             }
         });

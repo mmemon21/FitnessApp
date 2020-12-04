@@ -52,10 +52,20 @@ public class LoginActivity  extends AppCompatActivity {
                     int group_id = user.getGroup_id();
                     LoginActivity.USER_ID = user_id;
                     LoginActivity.GROUP_ID = group_id;
-                    Toast.makeText(LoginActivity.this, "Welcome " + user.getFirst_name() + " " + user.getLast_name(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Welcome " + user.getFirst_name() + " "
+                            + user.getLast_name(), Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    //make sure no one sees your login info if you logout
+                    username.getText().clear();
+                    password.getText().clear();
+
+                    if(user_id >= 1000) {
+                        Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
 
                 }//First check if User Exists
                 /*Coach coach = dao.loginCoach(user_name, pass_word);

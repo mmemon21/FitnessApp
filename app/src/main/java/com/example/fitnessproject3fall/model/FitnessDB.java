@@ -55,6 +55,7 @@ public abstract class FitnessDB extends RoomDatabase{
                 "glen123", 1000);
         User user7 = new User(2000, "Drew", "Clinkenbeard",35, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/profile.JPG?alt=media&token=fcf817c2-be67-4008-acc2-9ebf94a9bd24", "hello i'm dr C", "drew445",
                 "drew123", 2000);
+
         dao.addUser(user1);
         dao.addUser(user2);
         dao.addUser(user3);

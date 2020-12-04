@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "611128489525",
+    "firebase_url": "https://fitnessproject3fallk.firebaseio.com",
+    "project_id": "fitnessproject3fallk",
+    "storage_bucket": "fitnessproject3fallk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611128489525:android:00e79647df18620927237c",
+        "android_client_info": {
+          "package_name": "com.example.fitnessproject3fall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611128489525-kr1k3ku5aorg58g3bjgpmnnt1af4bsss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe0anrPxnuAqMWufdbODUnsaj_1eyvTME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611128489525-kr1k3ku5aorg58g3bjgpmnnt1af4bsss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
