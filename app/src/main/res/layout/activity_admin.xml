@@ -34,6 +34,7 @@
             app:layout_constraintEnd_toStartOf="@+id/secondBoxA"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbarA" />
+
         <TextView
             android:id="@+id/textViewA2"
             android:layout_width="0dp"
@@ -80,6 +81,15 @@
                 android:layout_marginRight="3dp"
                 android:text="Logout"
                 android:textSize="9dp" />
+
+            <ImageView
+                android:id="@+id/adminProfileImg"
+                android:layout_width="94dp"
+                android:layout_height="118dp"
+                android:adjustViewBounds="true"
+                android:padding="3dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/homer" />
         </RelativeLayout>
         <LinearLayout
             android:id="@+id/linearLayoutA"

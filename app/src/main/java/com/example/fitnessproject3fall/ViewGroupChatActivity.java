@@ -65,7 +65,7 @@ public class ViewGroupChatActivity extends AppCompatActivity {
         Button send_msg = findViewById(R.id.send_msg_group_button);
 
         TextView msg = findViewById(R.id.group_name);
-        msg.setText("Group " + LoginActivity.GROUP_ID);
+        msg.setText("Group " + LoginActivity.GROUP_ID + " Chat!\n Ask Questions and Messages to everyone in the group.");
         send_msg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

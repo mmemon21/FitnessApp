@@ -6,30 +6,39 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
 import com.example.fitnessproject3fall.model.User;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class AdminActivity extends AppCompatActivity {
 
     public static boolean admin;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = firebaseDatabase.getReference();
+    private DatabaseReference first = databaseReference.child("raul");
+    private ImageView profilePic;
+    FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-        FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
+        profilePic = findViewById(R.id.adminProfileImg);
 
-        List<User> users;
-        users = dao.getAllUser();
-
-        User user = dao.searchUser(LoginActivity.USER_ID);
 
         Button logoutButton = findViewById(R.id.logoutButtonA);
         logoutButton.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +58,14 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
+        Button nutritionBtn = findViewById(R.id.nutritionButtonA);
+        nutritionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, NutritionActivity.class);
+                startActivity(intent);
+            }
+        });
         Button calendarButton = findViewById(R.id.calendarButtonA);
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,25 +114,30 @@ public class AdminActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    protected void onStart() {
+        User user = dao.searchUser(LoginActivity.USER_ID);
+        super.onStart();
+        first.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String link = dataSnapshot.getValue(String.class);
+                Picasso.get().load(link).into(profilePic);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                try {
+                    if(!user.getProfile_url().isEmpty()) {
+                        Picasso.get().load(user.getProfile_url()).into(profilePic);
+                    }else{
+                        Snackbar.make(findViewById(android.R.id.content),"Image empty.\nEdit profile and to add a url.", Snackbar.LENGTH_LONG).show();
+                    }
+                }catch (Exception e){
+                    Snackbar.make(findViewById(android.R.id.content),"Image URL Error.", Snackbar.LENGTH_LONG).show();
+                }
+            }
+
+        });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        //super.onOptionsItemSelected(item);
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return onOptionsItemSelected(item);
-    }
 }
