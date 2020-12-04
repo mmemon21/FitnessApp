@@ -114,7 +114,8 @@ public class ViewProfileActivity extends AppCompatActivity {
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(ViewProfileActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 

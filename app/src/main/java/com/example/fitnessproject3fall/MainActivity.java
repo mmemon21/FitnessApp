@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -126,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     if(!user.getProfile_url().isEmpty()) {
                         Picasso.get().load(user.getProfile_url()).into(profilePic);
                     }else{
-                        Snackbar.make(findViewById(android.R.id.content),"Image empty.\nEdit profile and to add a url.", Snackbar.LENGTH_LONG).show();
+                       // Snackbar.make(findViewById(android.R.id.content),"Image empty.\nEdit profile and to add a url.", Snackbar.LENGTH_LONG).show();
                     }
                 }catch (Exception e){
                     Snackbar.make(findViewById(android.R.id.content),"Image URL Error.", Snackbar.LENGTH_LONG).show();
@@ -135,5 +136,5 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
-    
+
 }
