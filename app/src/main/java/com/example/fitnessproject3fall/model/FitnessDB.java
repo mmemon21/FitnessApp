@@ -40,16 +40,16 @@ public abstract class FitnessDB extends RoomDatabase{
     }
     private void loadUsers(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();
-        User user1 = new User(1, "Raul", "Perez", 21,"https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/images%2F7a9d11fb-9849-43bf-9a03-2bd80dcfec92?alt=media&token=c5702b4c-3ad7-4c39-b408-c4e15e274428", "Hello my name Is raul ** edit later",
+        User user1 = new User(1, "Raul", "Perez", 21,"https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/4D8CA5D1-B737-41E5-A6C4-B5B878420D37_1_201_a.jpeg?alt=media&token=e862d969-6eed-4797-a43b-ef7350b24d7f", "Hello my name Is raul ** edit later",
                 "raul676", "RaulP676",1000);
-        User user2 = new User(2, "Joe", "Ramirez", 22, "","hello I'm Joe... edit later",
-                "joem445", "joeMon455", 1000);
-        User user3 = new User(3, "Daniel", "Kufer", 22, "", "Hello I'm daniel.. edit later",
+        User user2 = new User(2, "Mike", "Zuniga", 54, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/IMG_8306.PNG?alt=media&token=ffe838d1-13ad-4392-8ecb-b60b63699808","hello I'm Mike Zuniga... edit later",
+                "mike123", "mike123", 1000);
+        User user3 = new User(3, "Daniel", "Kufer", 22, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/profilepic.jpg?alt=media&token=e515ebf0-1061-4b05-9e90-77f5f5fb3eca", "Hello I'm daniel.. edit later",
                 "daniel123", "daniel123", 1000);
 
-        User user4 = new User(4, "Kevin", "Piffero", 24, "", "Hello I'm Kevin... edit later",
+        User user4 = new User(4, "Kevin", "Piffero", 24, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/img_0249.jpg?alt=media&token=6fbe74d7-8645-4e1e-996f-0b2271e382ae", "Hello I'm Kevin... edit later",
                 "kevin456", "kevin456", 2000);
-        User user5 = new User(5, "Mustafa", "Memon", 23, "", "Hello I'm Mustafa... edit later",
+        User user5 = new User(5, "Mustafa", "Memon", 23, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/picture.png?alt=media&token=49a9b445-edc6-48b3-a0e1-618787215029", "Hello I'm Mustafa... edit later",
                 "mustafa789", "mustafa789", 2000);
         User user6 = new User(1000, "Glen", "Bruns",40, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/grb-headshot.jpg?alt=media&token=77d9170f-0ee8-47ce-8452-cc0681448b06", "hello I'm glen bruns", "glen445",
                 "glen123", 1000);
@@ -118,15 +118,25 @@ public abstract class FitnessDB extends RoomDatabase{
     }
     private void loadLinks(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();
-        Links link1 = new Links(1, 1000, "https://www.healthline.com/nutrition/50-super-healthy-foods");
-        Links link2 = new Links(2, 1000, "https://www.eatthis.com/healthiest-foods-on-planet/");
-        Links link3 = new Links(3, 2000, "https://www.healthline.com/nutrition/50-super-healthy-foods");
-        Links link4 = new Links(4, 2000, "https://www.eatthis.com/healthiest-foods-on-planet/");
+        Links link1 = new Links(1, 1000, "https://www.healthline.com/nutrition/50-super-healthy-foods","50 Super Healthy Foods", "Nutrition");
+        Links link2 = new Links(2, 1000, "https://www.eatthis.com/healthiest-foods-on-planet/","Eat This Not That!", "Nutrition");
+        Links link3 = new Links(3, 1000, "https://www.helpguide.org/articles/healthy-living/the-mental-health-benefits-of-exercise.htm","Mental Health Benefits from Exercise!", "Exercise");
+        Links link4 = new Links(4, 1000, "https://simpleprogrammer.com/programmers-exercise/","Programming + Exercise!", "Random");
+
+        Links link5 = new Links(5, 2000, "https://www.healthline.com/nutrition/50-super-healthy-foods","50 Super Healthy Foods", "Nutrition");
+        Links link6 = new Links(6, 2000, "https://www.eatthis.com/healthiest-foods-on-planet/","Eat This Not That!", "Nutrition");
+        Links link7 = new Links(7, 2000, "https://www.helpguide.org/articles/healthy-living/the-mental-health-benefits-of-exercise.htm","Mental Health Benefits from Exercise!", "Exercise");
+        Links link8 = new Links(8, 2000, "https://simpleprogrammer.com/programmers-exercise/","Programming + Exercise!", "Random");
 
         dao.addLinks(link1);
         dao.addLinks(link2);
         dao.addLinks(link3);
         dao.addLinks(link4);
+
+        dao.addLinks(link5);
+        dao.addLinks(link6);
+        dao.addLinks(link7);
+        dao.addLinks(link8);
     }
     private void loadVideos(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();

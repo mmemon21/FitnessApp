@@ -30,10 +30,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15sp"
         android:fontFamily="@font/alegreya_sans_sc_bold_italic"
+        android:text="kdfk"
         android:textColor="#111"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.809"
+        app:layout_constraintHorizontal_bias="0.785"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.138" />

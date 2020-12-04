@@ -1,6 +1,7 @@
 package com.example.fitnessproject3fall;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,25 +22,18 @@ import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
 import com.example.fitnessproject3fall.model.GroupChat;
 import com.example.fitnessproject3fall.model.Links;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
 public class NutritionActivity extends AppCompatActivity {
     List<Links> links;
+    public String image = "";
     FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition);
-
-       /* TextView msg = findViewById(R.id.links_urls);
-
-        String link_url = "";
-        for(int i =0; i < links.size();i++){
-            link_url += links.get(i).getLink_url() + "\n";
-        }
-        msg.setText(link_url);*/
-
 
 
         Button back_button = findViewById(R.id.backButtonNutri);
@@ -88,15 +82,25 @@ public class NutritionActivity extends AppCompatActivity {
             TextView item = itemView.findViewById(R.id.link_item);
             ImageView img = itemView.findViewById(R.id.imageLink);
 
+            if(f.getCategory().equals("Exercise")){ image = "dumbell"; }
+            if(f.getCategory().equals("Nutrition")){image = "vegetable";}
+            if(f.getCategory().equals("Random")){image = "otherstuff";}
+
+            int id = getResources().getIdentifier("com.example.fitnessproject3fall:drawable/"+image, null, null);
+            img.setImageResource(id);
 
             item.setText(f.toString());
 
             item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse(f.getLink_url()));
-                    startActivity(i);
+                    try {
+                        Intent i = new Intent(Intent.ACTION_VIEW);
+                        i.setData(Uri.parse(f.getLink_url()));
+                        startActivity(i);
+                    }catch (Exception e){
+                        Snackbar.make(findViewById(android.R.id.content),"Invalid URL", Snackbar.LENGTH_LONG).show();
+                    }
                 }
             });
         }
