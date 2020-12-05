@@ -88,4 +88,6 @@ public interface FitnessDAO {
     void deleteUser(User user);
     @Delete
     void deleteCoach(Coach coach);
+    @Delete
+    void deleteGroupChat(GroupChat msg);
 }

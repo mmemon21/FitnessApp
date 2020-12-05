@@ -18,12 +18,14 @@ import androidx.test.core.app.ApplicationProvider;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import android.content.Context;
 
 import com.example.fitnessproject3fall.model.Coach;
 import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
+import com.example.fitnessproject3fall.model.GroupChat;
 import com.example.fitnessproject3fall.model.User;
 
 import org.junit.Test;
@@ -66,7 +68,13 @@ public class fitnesstests {
     }
 
     @Test //tbd
-    public void testMessages() throws Exception{
-
+    public void groupChatTest() throws Exception{
+        GroupChat chat = new GroupChat(10, 2, "message", 2000, "name", "3:54PM");
+        fitnessDAO.addGroupChat(chat);
+        assertEquals(chat.getMessage(), "message");
+        assertEquals(chat.getCurrentTime(), "3:54PM");
+        assertEquals(chat.getName(), "name");
+        assertEquals(chat.getGroup_id(), 2000);
+        fitnessDAO.deleteGroupChat(chat);
     }
 }
