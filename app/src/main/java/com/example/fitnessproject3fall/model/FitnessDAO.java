@@ -3,6 +3,7 @@ package com.example.fitnessproject3fall.model;
 import java.util.List;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -83,4 +84,8 @@ public interface FitnessDAO {
 
     @Update
     void updateUser(User user);
+    @Delete
+    void deleteUser(User user);
+    @Delete
+    void deleteCoach(Coach coach);
 }
