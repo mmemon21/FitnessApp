@@ -6,7 +6,6 @@ import android.content.Context;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 
 import java.io.IOException;
@@ -14,8 +13,7 @@ import java.util.List;
 
 import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
-import androidx.test.ext.junit.runners.*;
-import androidx.test.platform.app.*;
+
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -25,12 +23,15 @@ import android.content.Context;
 
 import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
+import com.example.fitnessproject3fall.model.User;
+
 import org.junit.Test;
 
-public class FitnessDAOTests {
-
-    private FitnessDAO fitnessDAO;
+public class fitnesstests {
+    Context context = ApplicationProvider.getApplicationContext();
     private FitnessDB db;
+    private FitnessDAO fitnessDAO = FitnessDB.getFitnessDB(context).dao();
+    User new_user = new User(3, "first_name", "last_name", 20, "", "", "user_name", "pass_word", 0);
 
     @Before
     public void createDatabase(){
@@ -43,8 +44,9 @@ public class FitnessDAOTests {
         db.close();
     }
 
-//    @Test
-//    public void addUserToDatabase() {
-//        FitnessDB testUser = new
-//    }
+    @Test
+    public void addUserToDatabase() throws Exception {
+        fitnessDAO.addUser(new_user);
+        assertEquals(new_user.getFirst_name(), "first_name");
+    }
 }
