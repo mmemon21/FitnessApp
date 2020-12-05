@@ -69,6 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                         RegisterActivity.tempUserID = user_id;
                         Intent intent = new Intent(RegisterActivity.this,ViewCoachActivity.class);
                         startActivity(intent);
+                        finish();
                     } else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                         builder.setTitle("Username is already taken.");

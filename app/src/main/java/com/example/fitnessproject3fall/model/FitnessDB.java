@@ -40,21 +40,27 @@ public abstract class FitnessDB extends RoomDatabase{
     }
     private void loadUsers(Context context){
         FitnessDAO dao = getFitnessDB(context).dao();
-        User user1 = new User(1, "Raul", "Perez", 21,"https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/4D8CA5D1-B737-41E5-A6C4-B5B878420D37_1_201_a.jpeg?alt=media&token=e862d969-6eed-4797-a43b-ef7350b24d7f", "Hello my name Is raul ** edit later",
-                "raul676", "RaulP676",1000);
-        User user2 = new User(2, "Mike", "Zuniga", 54, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/IMG_8306.PNG?alt=media&token=ffe838d1-13ad-4392-8ecb-b60b63699808","hello I'm Mike Zuniga... edit later",
-                "mike123", "mike123", 1000);
-        User user3 = new User(3, "Daniel", "Kufer", 22, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/profilepic.jpg?alt=media&token=e515ebf0-1061-4b05-9e90-77f5f5fb3eca", "Hello I'm daniel.. edit later",
-                "daniel123", "daniel123", 1000);
-
-        User user4 = new User(4, "Kevin", "Piffero", 24, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/img_0249.jpg?alt=media&token=6fbe74d7-8645-4e1e-996f-0b2271e382ae", "Hello I'm Kevin... edit later",
-                "kevin456", "kevin456", 2000);
-        User user5 = new User(5, "Mustafa", "Memon", 23, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/picture.png?alt=media&token=49a9b445-edc6-48b3-a0e1-618787215029", "Hello I'm Mustafa... edit later",
-                "mustafa789", "mustafa789", 2000);
-        User user6 = new User(1000, "Glen", "Bruns",40, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/grb-headshot.jpg?alt=media&token=77d9170f-0ee8-47ce-8452-cc0681448b06", "hello I'm glen bruns", "glen445",
-                "glen123", 1000);
-        User user7 = new User(2000, "Drew", "Clinkenbeard",35, "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/profile.JPG?alt=media&token=fcf817c2-be67-4008-acc2-9ebf94a9bd24", "hello i'm dr C", "drew445",
-                "drew123", 2000);
+        User user1 = new User(1, "Raul", "Perez", 21,
+                "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/4D8CA5D1-B737-41E5-A6C4-B5B878420D37_1_201_a.jpeg?alt=media&token=e862d969-6eed-4797-a43b-ef7350b24d7f",
+                "Hello my name Is raul ** edit later","raul676", "RaulP676",1000);
+        User user2 = new User(2, "Mike", "Zuniga", 54,
+                "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/IMG_8306.PNG?alt=media&token=ffe838d1-13ad-4392-8ecb-b60b63699808",
+                "hello I'm Mike Zuniga... edit later","mike123", "mike123", 1000);
+        User user3 = new User(3, "Daniel", "Kufer", 22,
+                "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/profilepic.jpg?alt=media&token=e515ebf0-1061-4b05-9e90-77f5f5fb3eca",
+                "Hello I'm daniel.. edit later","daniel123", "daniel123", 1000);
+        User user4 = new User(4, "Kevin", "Piffero", 24,
+                "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/img_0249.jpg?alt=media&token=6fbe74d7-8645-4e1e-996f-0b2271e382ae",
+                "Hello I'm Kevin... edit later","kevin456", "kevin456", 2000);
+        User user5 = new User(5, "Mustafa", "Memon", 23,
+                "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/picture.png?alt=media&token=49a9b445-edc6-48b3-a0e1-618787215029",
+                "Hello I'm Mustafa... edit later","mustafa789", "mustafa789", 2000);
+        User user6 = new User(1000, "Glen", "Bruns",40,
+                "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/grb-headshot.jpg?alt=media&token=77d9170f-0ee8-47ce-8452-cc0681448b06",
+                "hello I'm glen bruns", "glen445","glen123", 1000);
+        User user7 = new User(2000, "Drew", "Clinkenbeard",35,
+                "https://firebasestorage.googleapis.com/v0/b/fitnessproject3fallk.appspot.com/o/profile.JPG?alt=media&token=fcf817c2-be67-4008-acc2-9ebf94a9bd24",
+                "hello i'm dr C", "drew445","drew123", 2000);
 
         dao.addUser(user1);
         dao.addUser(user2);
