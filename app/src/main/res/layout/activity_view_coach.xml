@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/grad"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ViewCoachActivity"
@@ -13,14 +13,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/design_default_color_secondary"
         android:gravity="center"
         android:text="Select a coach:"
+        android:textSize="23dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_coaches"
@@ -31,20 +32,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137" />
-
+        app:layout_constraintVertical_bias="0.243" />
 
     <Button
         android:id="@+id/back"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
         android:text="Back"
         android:textColor="#DBFCFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565" />
+        app:layout_constraintVertical_bias="0.558" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

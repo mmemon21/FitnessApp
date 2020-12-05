@@ -11,7 +11,7 @@
 
         android:background="@drawable/grad">
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarA"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewA"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -31,34 +31,35 @@
             android:fontFamily="@font/alegreya_sc_bold_italic"
             android:text="Fitness App  Home Page"
             android:textSize="30sp"
-            app:layout_constraintEnd_toStartOf="@+id/secondBox"
+            app:layout_constraintEnd_toStartOf="@+id/secondBoxA"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarA" />
+
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textViewA2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:text="Start a new Journey"
-            app:layout_constraintEnd_toStartOf="@+id/secondBox"
+            app:layout_constraintEnd_toStartOf="@+id/secondBoxA"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewA" />
 
         <!--android:flow_verticalAlign="center"-->
         <RelativeLayout
-            android:id="@+id/secondBox"
+            android:id="@+id/secondBoxA"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
 
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+            app:layout_constraintStart_toEndOf="@+id/textViewA"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarA">
 
             <Button
-                android:id="@+id/profileButton"
+                android:id="@+id/profileButtonA"
                 android:layout_width="75dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="100dp"
@@ -70,7 +71,7 @@
                 android:textSize="9dp"></Button>
 
             <Button
-                android:id="@+id/logoutButton"
+                android:id="@+id/logoutButtonA"
                 android:layout_width="75dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="100dp"
@@ -82,17 +83,16 @@
                 android:textSize="9dp" />
 
             <ImageView
-                android:id="@+id/profileUser"
+                android:id="@+id/adminProfileImg"
                 android:layout_width="94dp"
                 android:layout_height="118dp"
                 android:adjustViewBounds="true"
                 android:padding="3dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/homer" />
-
         </RelativeLayout>
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/linearLayoutA"
             android:layout_width="0dp"
             android:layout_height="175dp"
             android:orientation="horizontal"
@@ -100,7 +100,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/secondBox">
+            app:layout_constraintTop_toBottomOf="@+id/secondBoxA">
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -111,10 +111,10 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/textViewA3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/calendarButton"
+                        android:layout_below="@id/calendarButtonA"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/calligraffitti"
@@ -122,7 +122,7 @@
                         android:textSize="24sp" />
 
                     <Button
-                        android:id="@+id/calendarButton"
+                        android:id="@+id/calendarButtonA"
                         android:background="@drawable/calender"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
@@ -141,10 +141,10 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textViewA4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/bmiButton"
+                        android:layout_below="@id/bmiButtonA"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/calligraffitti"
@@ -152,7 +152,7 @@
                         android:textSize="24sp" />
 
                     <Button
-                        android:id="@+id/bmiButton"
+                        android:id="@+id/bmiButtonA"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:layout_centerHorizontal="true"
@@ -163,7 +163,7 @@
             </androidx.cardview.widget.CardView>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/linearLayoutA2"
             android:layout_width="0dp"
             android:layout_height="175dp"
             android:orientation="horizontal"
@@ -171,7 +171,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutA">
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -182,10 +182,10 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/textViewA6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/nutritionButton"
+                        android:layout_below="@id/nutritionButtonA"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/calligraffitti"
@@ -193,7 +193,7 @@
                         android:textSize="24sp" />
 
                     <Button
-                        android:id="@+id/nutritionButton"
+                        android:id="@+id/nutritionButtonA"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:layout_centerHorizontal="true"
@@ -212,10 +212,10 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/textViewA7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/vidsButton"
+                        android:layout_below="@id/vidsButtonA"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/calligraffitti"
@@ -223,7 +223,7 @@
                         android:textSize="24sp" />
 
                     <Button
-                        android:id="@+id/vidsButton"
+                        android:id="@+id/vidsButtonA"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:layout_centerHorizontal="true"
@@ -241,22 +241,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutA2">
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1">
-
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/textViewA8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/chatButton"
+                        android:layout_below="@id/chatButtonA"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/calligraffitti"
@@ -264,12 +263,43 @@
                         android:textSize="24sp" />
 
                     <Button
-                        android:id="@+id/chatButton"
+                        android:id="@+id/chatButtonA"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
-                        android:background="@drawable/chat" />
+                        android:background="@drawable/chat"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewA9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/suggestionButton"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/calligraffitti"
+                        android:text="Admin Hub"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/suggestionButton"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/admin"
+                        app:srcCompat="@drawable/admin"
+                        tools:srcCompat="@drawable/admin" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>

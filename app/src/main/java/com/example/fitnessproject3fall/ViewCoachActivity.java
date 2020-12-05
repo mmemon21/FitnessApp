@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,9 +25,17 @@ import com.example.fitnessproject3fall.model.Coach;
 import com.example.fitnessproject3fall.model.FitnessDAO;
 import com.example.fitnessproject3fall.model.FitnessDB;
 import com.example.fitnessproject3fall.model.User;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class ViewCoachActivity extends AppCompatActivity {
     List<Coach> coaches;
+    FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
@@ -82,6 +91,36 @@ public class ViewCoachActivity extends AppCompatActivity {
 
         public void bind(Coach f ) {
             TextView item = itemView.findViewById(R.id.item_id);
+            ImageView img = itemView.findViewById(R.id.profilePikid);
+            User u = dao.searchUser(f.getUser_id());
+
+            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+            DatabaseReference databaseReference = firebaseDatabase.getReference();
+            DatabaseReference first = databaseReference.child("");
+
+            first.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String link = dataSnapshot.getValue(String.class);
+                    Picasso.get().load(link).into(img);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    try {
+                        if(!u.getProfile_url().isEmpty()) {
+                            Picasso.get().load(u.getProfile_url()).into(img);
+                        }else{
+                            //Snackbar.make(findViewById(android.R.id.content),"Image empty.\nEdit profile and to add a url.", Snackbar.LENGTH_LONG).show();
+                        }
+                    }catch (Exception e){
+                        Snackbar.make(findViewById(android.R.id.content),"Image URL Error.", Snackbar.LENGTH_LONG).show();
+                    }
+                }
+
+            });
+
+
             item.setText(f.toString());
 
             //make the item clickable

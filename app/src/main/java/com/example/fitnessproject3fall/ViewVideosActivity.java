@@ -2,6 +2,8 @@ package com.example.fitnessproject3fall;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,5 +37,13 @@ public class ViewVideosActivity extends AppCompatActivity {
 
         VideosAdapter videosAdapter = new VideosAdapter(videosList);
         recyclerView.setAdapter(videosAdapter);
+
+        Button back = findViewById(R.id.finsih_videosBtn);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

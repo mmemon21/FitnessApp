@@ -8,56 +8,77 @@
     tools:context=".LoginActivity"
     android:background="@drawable/grad">
 
-
     <TextView
+        android:id="@+id/textView11"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="105dp"
         android:fontFamily="@font/alegreya_sans_sc_bold_italic"
-        android:text="Login Here"
+        android:gravity="center"
+        android:text="Welcome To the Fitness App"
         android:textColor="#050505"
-        android:textSize="40sp"
-        app:flow_verticalAlign="center"
-        app:layout_constraintBottom_toTopOf="@+id/et_UserNameLogin"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageLink"
+        android:layout_width="153dp"
+        android:layout_height="142dp"
+        android:layout_margin="9dp"
+        android:adjustViewBounds="true"
+        android:padding="3dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/homeimage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.488" />
+        app:layout_constraintVertical_bias="0.173" />
+
+    <TextView
+        android:layout_width="194dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="244dp"
+        android:layout_marginEnd="100dp"
+        android:fontFamily="@font/alegreya_sans_sc_bold_italic"
+        android:gravity="center"
+        android:text="Login Here"
+        android:textColor="#050505"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_UserNameLogin"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="304dp"
         android:hint="Username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/et_PasswordLogin"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginStart="92dp"
-        android:password="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="380dp"
         android:hint="Password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_UserNameLogin" />
-
-    <TextView
-        android:id="@+id/errorMessage"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="424dp"
-        android:text=" "
+        android:password="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,19 +86,30 @@
         android:id="@+id/bt_Login"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="456dp"
         android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_PasswordLogin" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="432dp"
+        android:text=" "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bt_Login_Register"
         android:layout_width="133dp"
         android:layout_height="44dp"
-        android:layout_marginLeft="232dp"
-        android:layout_marginStart="232dp"
-        android:layout_marginTop="468dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="536dp"
         android:text="Sign Up"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -87,8 +119,9 @@
         android:layout_width="158dp"
         android:layout_height="38dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="472dp"
+        android:layout_marginTop="540dp"
         android:text="Don't have an account? You can sign up here!"
+        android:textColor="#050505"
         app:layout_constraintEnd_toStartOf="@+id/bt_Login_Register"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
