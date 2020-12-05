@@ -30,7 +30,7 @@ public class BmiActivity extends AppCompatActivity {
         });
     }
 
-    public void calculateBMI(View v) {
+    public void calculate(View v) {
         String heightStr = height.getText().toString();
         String weightStr = weight.getText().toString();
 
@@ -39,11 +39,12 @@ public class BmiActivity extends AppCompatActivity {
             float heightValue = Float.parseFloat(heightStr);
             float weightValue = Float.parseFloat(weightStr);
 
-            float bmi = weightValue / (heightValue * heightValue);
-
-            displayBMI(bmi);
-
+            displayBMI(calculateBMI(heightValue,weightValue));
         }
+    }
+
+    public static float calculateBMI(float heightValue, float weightValue){
+        return weightValue / (heightValue * heightValue);
     }
     //bmi= (mass/height^2)
 

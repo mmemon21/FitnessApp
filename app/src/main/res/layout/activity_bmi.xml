@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
-        android:onClick="calculateBMI"
+        android:onClick="calculate"
         android:text="Get BMI Rating" />
 
     <Button
@@ -60,7 +60,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
-        android:onClick="calculateBMI"
         android:text="Main Menu" />
 
     <TextView
