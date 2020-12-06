@@ -90,4 +90,10 @@ public interface FitnessDAO {
     void deleteCoach(Coach coach);
     @Delete
     void deleteGroupChat(GroupChat msg);
+    @Delete
+    void deleteGoals(Goals goals);
+    @Delete
+    void deleteLinks(Links links);
+    @Delete
+    void deleteVideos(Videos video);
 }
