@@ -123,12 +123,11 @@
 
                     <Button
                         android:id="@+id/calendarButtonA"
-                        android:background="@drawable/calender"
                         android:layout_width="75dp"
                         android:layout_height="75dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
-                        />
+                        android:background="@drawable/calendar" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
