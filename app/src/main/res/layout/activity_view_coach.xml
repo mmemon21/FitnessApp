@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:fontFamily="@font/alegreya_sc_bold_italic"
         android:text="Select a coach:"
         android:textSize="23dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,5 +1,6 @@
 package com.example.fitnessproject3fall;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -52,21 +53,29 @@ public class BmiActivity extends AppCompatActivity {
         String bmiLabel = "";
 
         if (Float.compare(bmi, 15f) <= 0) {
-            bmiLabel = "Very Severely Underweight";
+            bmiLabel = "Very Severely\n Underweight";
+            result.setTextColor(Color.rgb(0, 44, 165));
         } else if (Float.compare(bmi, 15f) > 0  &&  Float.compare(bmi, 16f) <= 0) {
-            bmiLabel = "Severely Underweight";
+            bmiLabel = "Severely \nUnderweight";
+            result.setTextColor(Color.rgb(50, 141, 226));
         } else if (Float.compare(bmi, 16f) > 0  &&  Float.compare(bmi, 18.5f) <= 0) {
             bmiLabel = "Underweight";
+            result.setTextColor(Color.rgb(170, 214, 225));
         } else if (Float.compare(bmi, 18.5f) > 0  &&  Float.compare(bmi, 25f) <= 0) {
             bmiLabel = "Normal";
+            result.setTextColor(Color.rgb(42, 235, 99));
         } else if (Float.compare(bmi, 25f) > 0  &&  Float.compare(bmi, 30f) <= 0) {
             bmiLabel = "Overweight";
+            result.setTextColor(Color.rgb(248, 245, 51));
         } else if (Float.compare(bmi, 30f) > 0  &&  Float.compare(bmi, 35f) <= 0) {
-            bmiLabel = "Moderately Obese - Class I";
+            bmiLabel = "Moderately \nObese\n Class I";
+            result.setTextColor(Color.rgb(248, 186, 51));
         } else if (Float.compare(bmi, 35f) > 0  &&  Float.compare(bmi, 40f) <= 0) {
-            bmiLabel = "Severely Obese - Class II";
+            bmiLabel = "Severely Obese \n  \nClass II";
+            result.setTextColor(Color.rgb(248, 91, 51));
         } else {
-            bmiLabel = "Very Severely Obese - Class III";
+            bmiLabel = "Very Severely \nObese \n Class III";
+            result.setTextColor(Color.rgb(255, 0, 0));
         }
 
         bmiLabel = bmi + "\n\n" + bmiLabel;

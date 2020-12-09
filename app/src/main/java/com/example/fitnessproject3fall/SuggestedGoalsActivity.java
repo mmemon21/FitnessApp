@@ -49,8 +49,15 @@ public class SuggestedGoalsActivity extends AppCompatActivity {
                 Goals new_goal = new Goals(goal_count,group_id,description,date);
                 dao.addGoals(new_goal);
                 Toast.makeText(SuggestedGoalsActivity.this, "Your suggested goal has been added" , Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SuggestedGoalsActivity.this, SuggestedActivity.class);
-                startActivity(intent);
+                finish();
+            }
+        });
+
+        Button back_button = findViewById(R.id.bt_back_goal);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

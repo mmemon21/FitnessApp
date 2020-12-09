@@ -1,6 +1,7 @@
 package com.example.fitnessproject3fall;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -82,6 +83,7 @@ public class LoginActivity  extends AppCompatActivity {
                     TextView message = findViewById(R.id.errorMessage);
 
                     message.setText("Sorry username doesn't exist.");
+                    message.setTextColor(Color.rgb(219, 52, 10));
                 }
 
             }

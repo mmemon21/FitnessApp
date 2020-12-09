@@ -62,12 +62,18 @@ public class SuggestedNutritionActivity extends AppCompatActivity {
                     Links new_nutrition = new Links(nutrition_count, group_id, link, description, category);
                     dao.addLinks(new_nutrition);
                     Toast.makeText(SuggestedNutritionActivity.this, "Your nutrition suggestion has been added.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SuggestedNutritionActivity.this, SuggestedActivity.class);
-                    startActivity(intent);
+                    finish();
                 }catch (Exception e){
                     Snackbar.make(findViewById(android.R.id.content),"Please Fillout all information", Snackbar.LENGTH_LONG).show();
                 }
 
+            }
+        });
+        Button back = findViewById(R.id.bt_add_nutrition_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

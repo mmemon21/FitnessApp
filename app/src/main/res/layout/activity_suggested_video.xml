@@ -38,5 +38,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_link" />
 
+    <Button
+        android:id="@+id/bt_add_video_back"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="76dp"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_link" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

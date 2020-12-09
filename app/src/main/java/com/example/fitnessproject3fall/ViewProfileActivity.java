@@ -56,7 +56,7 @@ public class ViewProfileActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
     private DatabaseReference first = databaseReference.child("raul");
-
+    private boolean status;
     FitnessDAO dao = FitnessDB.getFitnessDB(this).dao();
     User user = dao.searchUser(LoginActivity.USER_ID);
     Coach coach = dao.searchCoach(LoginActivity.GROUP_ID);
@@ -70,7 +70,7 @@ public class ViewProfileActivity extends AppCompatActivity {
         for(int i =0; i < list_coach.size(); i++){
             list_id.add(list_coach.get(i).getUser_id());
         }
-        boolean status = false;
+         status = false;
         for(int j =0; j < list_id.size(); j++){
             if(user.getUser_id() == list_id.get(j)){
                 status = true;
@@ -109,12 +109,17 @@ public class ViewProfileActivity extends AppCompatActivity {
             }
         });
 
-
         Button menuButton = findViewById(R.id.menuButton);
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                if(status){
+                    Intent intent = new Intent(ViewProfileActivity.this, AdminActivity.class);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new Intent(ViewProfileActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 

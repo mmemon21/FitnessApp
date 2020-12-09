@@ -52,7 +52,8 @@ public class SuggestedActivity extends AppCompatActivity {
         Backbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(SuggestedActivity.this, AdminActivity.class);
+                startActivity(intent);
             }
         });
     }

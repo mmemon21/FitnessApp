@@ -44,8 +44,15 @@ public class SuggestedVideoActivity extends AppCompatActivity {
                 Videos new_video = new Videos(video_count,group_id,video_link);
                 dao.addVideos(new_video);
                 Toast.makeText(SuggestedVideoActivity.this, "Your suggested video has been added" , Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SuggestedVideoActivity.this, SuggestedActivity.class);
-                startActivity(intent);
+                finish();
+            }
+        });
+
+        Button back = findViewById(R.id.bt_add_video_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
